@@ -1,0 +1,8 @@
+README.md
+README.rdoc
+LICENSE
+
+/test/*
+
+.env.development
+.env.test
