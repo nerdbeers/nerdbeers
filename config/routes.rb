@@ -5,6 +5,11 @@ Rails.application.routes.draw do
 
   namespace :api, :default => {:format => :json} do
 
+      scope path: '/chapter', controller: :chapter do
+        get '/:id' => :show
+        get '/' => :list
+      end
+
       scope path: '/venue', controller: :venue do
         get 'list' => :list
         get 'show/:id' => :show
