@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   get 'home/index'
 
 
-  namespace :api, :default => {:format => :json} do
+  namespace :api do#, :default => {:format => :json} do
 
       scope path: '/chapter', controller: :chapter do
-        get '/:id' => :show
-        get '/' => :list
+          get '/list' => :list
+          get '/show/:id' => :show
       end
 
       scope path: '/venue', controller: :venue do
