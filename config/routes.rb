@@ -10,5 +10,9 @@ Rails.application.routes.draw do
         get 'show/:id' => :show
       end
 
+      scope path: '/topic', controller: :topic do
+        get '/:id' => :show
+      end
+
   end
 end
