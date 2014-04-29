@@ -28,12 +28,15 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'spring'# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 
-  gem "bullet" #orm profiling
+  gem 'thin'
+  gem 'bullet' #orm profiling
 
   gem 'dotenv-rails'
   gem 'foreman' # for the procfile
+  gem 'minitest-rails'#, '~> 2.0.0.beta1'
+  gem 'mocha'
+  #gem 'turn'
 
-  gem 'minitest'
 end
 
 group :production do
