@@ -1,0 +1,1 @@
+json.(@chapter, :id, :title)
