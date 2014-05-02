@@ -4,7 +4,8 @@ default: &default
   reconnect: false
   host: localhost
   pool: 5
-  username: rob
+  username: postgres
+  password: postgres
 
 development:
   <<: *default
