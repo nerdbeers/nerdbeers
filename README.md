@@ -31,5 +31,5 @@ getting started
 > rails s
 ```
 
-## Behold! The wondress beauty of the nerdbeers rails-edition
+## Behold! The wonderous beauty of the nerdbeers rails-edition
 Open your web browser and visit http://localhost:3000/
