@@ -1,0 +1,1 @@
+json.array! @venues, :id, :venue, :map_link
