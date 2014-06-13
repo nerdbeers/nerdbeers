@@ -10,8 +10,8 @@ Rails.application.routes.draw do
           get '/show/:id' => :show
       end
 
-      scope path: '/venue', controller: :venue do
-        get 'list' => :list
+      scope path: '/venues', controller: :venue do
+        get '/' => :list
         get 'show/:id' => :show
       end
 
