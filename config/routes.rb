@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
 
   namespace :api do#, :default => {:format => :json} do
+    scope path: '/agenda', controller: :agenda do
+        get '/' => :show
+    end
 
       scope path: '/chapter', controller: :chapter do
           get '/list' => :list

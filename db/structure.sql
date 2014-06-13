@@ -78,7 +78,7 @@ SET default_with_oids = false;
 CREATE TABLE agendas (
     id integer NOT NULL,
     meeting_date date,
-    location_id integer,
+    venue_id integer,
     details hstore,
     created_at timestamp without time zone,
     updated_at timestamp without time zone
@@ -241,4 +241,6 @@ INSERT INTO schema_migrations (version) VALUES ('20140429035859');
 INSERT INTO schema_migrations (version) VALUES ('20140613195436');
 
 INSERT INTO schema_migrations (version) VALUES ('20140613203641');
+
+INSERT INTO schema_migrations (version) VALUES ('20140613211048');
 
