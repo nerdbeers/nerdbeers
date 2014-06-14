@@ -1,2 +1,13 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>Nerd Beers</h1>
+	<h2><%= @agenda.meeting_date %> details</h2><br/>
+
+	<table>
+		<tr><td>topic</td><td>beer</td></tr>
+			<tr><td><span class="icon-wrench" /> <%= @agenda.topic1 %></td><td><span class="icon-beer" /> <%= @agenda.beer1 %></td></tr>
+			<tr><td><span class="icon-wrench" /> <%= @agenda.topic2 %></td><td><span class="icon-beer" /> <%= @agenda.beer2 %></td></tr>
+			<tr><td><span class="icon-wrench" /> <%= @agenda.topic3 %></td><td><span class="icon-beer" /> <%= @agenda.beer3 %></td></tr>
+	</table>
+	<br/></br>
+	When: <%= @agenda.meeting_time %><br/>
+	Where: <a href='<%= @agenda.map_link %>' ><%= @agenda.venue_name %></a>
+	

@@ -3,6 +3,7 @@
 <head>
   <title>Nerdbeers</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
+  <link href="/css/bootstrap.min.css" media="all" rel="stylesheet" />
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
@@ -10,5 +11,6 @@
 
 <%= yield %>
 
+<footer class="Footer">Powered by Ember. Engined by Http. Data-ed by Json. Coded by Humans. Loved by All.</footer>
 </body>
 </html>
