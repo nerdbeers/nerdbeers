@@ -18,3 +18,4 @@ agenda = Agenda.create("2014-02-01", 2, "Docker", "Growth of Coffeescript", "Wha
 agenda = Agenda.create("2014-03-01", 4, "ElasticSearch", "Side Projects", "Atom", "Coop - F5", "Coop - Native Amber", "Bridgeport IPA", "Thu, March 19, 2013, 5:30 PM")
 agenda = Agenda.create("2014-04-01", 4, "Microsoft/Nasa OSS", "Heartbleed", "Ubuntu 14.04/Windows XP", "Coop - F5", "GreenFlash Hop Head Red", "Coop - Native Amber", "Thu, April 17, 2013, 5:30 PM")
 agenda = Agenda.create("2014-05-01", 4, "canary.io", "Death of TDD", "KcDc", "Avery - Ellies Brown Ale", "Avery - Out of Bounds Stout", "Coop F5", "Thu, May 22, 2013, 5:30 PM")
+agenda = Agenda.create("2014-06-01", 4, "raspberry pi projects", "vagrant+ansible dev machines", "unified logging solutions", "Avery - Ellies Brown Ale", "Avery - Out of Bounds Stout", "Coop F5", "Thu, June 19, 2013, 6:30 PM")
