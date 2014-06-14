@@ -19,17 +19,20 @@ getting started
 > rake db:create
 > rake db:migrate
 > rake db:schema:load
+
+> If you need some basic data, load the seed file with  rake db:seed
 ```
 
 ## The test part
 ```
-> rake test
+> rake test:all:db
 ```
 
 ## The run it part
 ```
 > rails s
 ```
+> rails c    if you want to play around in console.
 
 ## Behold! The wonderous beauty of the nerdbeers rails-edition
 Open your web browser and visit http://localhost:3000/
