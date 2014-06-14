@@ -17,7 +17,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-gem 'turbolinks'  # we might be able to kill this one off with a pure ember app
+#gem 'turbolinks'  # we might be able to kill this one off with a pure ember app
 gem 'ember-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
