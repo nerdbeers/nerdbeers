@@ -2,6 +2,11 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
+  scope path: '/mgmt', controller: :mgmt do
+    get "/" => :list
+    get "/detail/:id" => :detail
+    post 'updatagenda' => :updateagenda
+  end
 
   namespace :api do#, :default => {:format => :json} do
     scope path: '/agenda', controller: :agenda do

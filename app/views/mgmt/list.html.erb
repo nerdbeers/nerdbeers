@@ -1,0 +1,11 @@
+Number of Meetings: <%= @agendas.size %>
+<hr/>
+<table>
+	<% @agendas.each do |a|%>
+	<tr><td><%= a.meeting_date%></td><td><%= a.topic1 %></td>
+		<td><a href="/mgmt/detail/<%= a.id %>">Details</a></td>
+	<% end %>
+</table>
+<hr/>
+
+click here to new up a meeting.
