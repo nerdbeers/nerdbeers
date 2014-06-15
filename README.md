@@ -26,6 +26,7 @@ getting started
 ## The test part
 ```
 > rake test:all:db
+> we can create a rake alias or a bash alias so we can just do 'rake t' and get the proper command
 ```
 
 ## The run it part
@@ -36,3 +37,12 @@ getting started
 
 ## Behold! The wonderous beauty of the nerdbeers rails-edition
 Open your web browser and visit http://localhost:3000/
+
+
+## Front end Part
+> Currently using  bootstrap
+> Turbo links has been removed
+> Emberjs has been added but not wired up.
+
+## Testing Ember Part
+> we're going to need the  phantomjs gem and  teaspoon gem. framework will be qunit 
