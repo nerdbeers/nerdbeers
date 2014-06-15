@@ -4,13 +4,37 @@
   <title>Nerdbeers</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <link href="/css/bootstrap.min.css" media="all" rel="stylesheet" />
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" media="all" rel="stylesheet" />
+  
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div class="navbar navbar-default">
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	  </button>
+	  <a class="navbar-brand" href="#">NerdBeers</a>
+	</div>
+	<div class="navbar-collapse collapse navbar-responsive-collapse">
+	  <ul class="nav navbar-nav">
+	    <li class="active"><a href="#">home</a></li>
+	  </ul>
+	</div>
+</div>
 
-<footer class="Footer">Powered by Ember. Engined by Http. Data-ed by Json. Coded by Humans. Loved by All.</footer>
+<div class="container">
+	 <%= yield %>
+</div>
+<br/><br/><br/>
+<div id="footer">
+      <div class="container">
+        <p class="text-muted">Powered by Ember. Engined by Http. Data-ed by Json. Coded by Humans. Loved by All.</p>
+      </div>
+    </div>
 </body>
 </html>
