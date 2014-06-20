@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   scope path: '/mgmt', controller: :mgmt do
     get "/" => :list
     get "/detail/:id" => :detail
-    post 'updatagenda' => :updateagenda
+    post 'updateagenda' => :updateagenda
   end
 
   namespace :api do#, :default => {:format => :json} do

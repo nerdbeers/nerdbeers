@@ -11,6 +11,8 @@ class MgmtController < ApplicationController
   end
   
   def updateagenda
+    Agenda.update(params[:agenda_id], params[:topic1], params[:topic2], params[:topic3], params[:beer1], params[:beer2], params[:beer3])
+    redirect_to controller: 'mgmt', action: 'list', status: 303
   end
   
   
