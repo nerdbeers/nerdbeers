@@ -35,6 +35,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'foreman' # for the procfile
   gem 'minitest-rails'#, '~> 2.0.0.beta1'
+  gem 'minitest-reporters', git: 'git@github.com:kern/minitest-reporters.git'
   gem 'mocha'
   #gem 'turn'
 
