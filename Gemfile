@@ -18,6 +18,8 @@ gem 'ember-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
+gem 'oj'  # json render
+gem 'oj_mimic_json' # we need this for Rails 4.1.x
 # webserver
 gem 'unicorn'
 # perf
