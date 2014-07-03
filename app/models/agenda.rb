@@ -3,7 +3,12 @@ class Agenda < ActiveRecord::Base
   store_accessor :details, :topic1, :topic2, :topic3, :beer1, :beer2, :beer3, :meeting_time
   
   def self.get_agenda(meetingdate)
-    Agenda.joins(:venue).select('agendas.*, venues.venue as venue_name, venues.map_link as map_link').find_by(:meeting_date => meetingdate)
+    if meetingdate.present?
+      Agenda.joins(:venue).select('agendas.*, venues.venue as venue_name, venues.map_link as map_link').find_by(:meeting_date => meetingdate)  
+    else
+      Agenda.joins(:venue).select('agendas.*, venues.venue as venue_name, venues.map_link as map_link').last
+    end
+    
   end
   
   def self.create(meeting_date, location, topic1, topic2, topic3, beer1, beer2, beer3, meeting_time)
