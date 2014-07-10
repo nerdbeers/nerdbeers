@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:kern/minitest-reporters.git
+  remote: git://github.com/kern/minitest-reporters.git
   revision: 652893fbf2fb607796bfe4ff3953ab576b1432ea
   specs:
     minitest-reporters (1.0.5)
