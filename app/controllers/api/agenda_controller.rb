@@ -13,7 +13,7 @@ class Api::AgendaController < ApplicationController
     pairing3 = { :id => 3, :topic => agenda.topic3, :beer => agenda.beer3 }
     pairings = pairing1, pairing2, pairing3
 
-    @agenda = {:id => agenda.id, :meeting_date => agenda.meeting_date, :meeting_time => agenda.meeting_time, :pairings => pairings, :venue_name => agenda.venue_name, :map_link => agenda.map_link}
+    @agenda = {:id => agenda.id, :meeting_date => agenda.meeting_time, :pairings => pairings, :venue_name => agenda.venue_name, :map_link => agenda.map_link}
 	render "api/agenda/show", :formats => [:json], :handlers => [:jbuilder], status: 200
   end
 
