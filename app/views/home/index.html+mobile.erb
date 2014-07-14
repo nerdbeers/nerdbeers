@@ -1,0 +1,11 @@
+<h2><%= @agenda.meeting_date.strftime("%B %Y") %> details</h2><br/>
+
+<table class="table">
+	<tr><th>topic</th><th>beer</th></tr>
+		<tr><td><i class="fa fa-wrench fa-lg" /> <%= @agenda.topic1 %></td><td><i class="fa fa-beer fa-lg" /> <%= @agenda.beer1 %></td></tr>
+		<tr><td><i class="fa fa-wrench fa-lg" /> <%= @agenda.topic2 %></td><td><i class="fa fa-beer fa-lg" /> <%= @agenda.beer2 %></td></tr>
+		<tr><td><i class="fa fa-wrench fa-lg" /> <%= @agenda.topic3 %></td><td><i class="fa fa-beer fa-lg" /> <%= @agenda.beer3 %></td></tr>
+</table>
+<br/>
+<p>When: <%= @agenda.meeting_time %></p>
+<p>Where: <a href='<%= @agenda.map_link %>' ><%= @agenda.venue_name %></a></p>
