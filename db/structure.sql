@@ -136,6 +136,38 @@ ALTER SEQUENCE chapters_id_seq OWNED BY chapters.id;
 
 
 --
+-- Name: metrics; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE metrics (
+    id integer NOT NULL,
+    variant text,
+    user_agent text,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: metrics_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE metrics_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: metrics_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE metrics_id_seq OWNED BY metrics.id;
+
+
+--
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -194,6 +226,13 @@ ALTER TABLE ONLY chapters ALTER COLUMN id SET DEFAULT nextval('chapters_id_seq':
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY metrics ALTER COLUMN id SET DEFAULT nextval('metrics_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY venues ALTER COLUMN id SET DEFAULT nextval('venues_id_seq'::regclass);
 
 
@@ -211,6 +250,14 @@ ALTER TABLE ONLY agendas
 
 ALTER TABLE ONLY chapters
     ADD CONSTRAINT chapters_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: metrics_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY metrics
+    ADD CONSTRAINT metrics_pkey PRIMARY KEY (id);
 
 
 --
@@ -243,4 +290,6 @@ INSERT INTO schema_migrations (version) VALUES ('20140613195436');
 INSERT INTO schema_migrations (version) VALUES ('20140613203641');
 
 INSERT INTO schema_migrations (version) VALUES ('20140613211048');
+
+INSERT INTO schema_migrations (version) VALUES ('20140714041715');
 
