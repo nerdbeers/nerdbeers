@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+ul.fa-ul {
+	display: block;
+	border-bottom: 1px solid whitesmoke;
+}
+ul.fa-ul li {
+	margin-bottom: 5px;
+}
+ul.fa-ul.sep {
+	border-bottom: 1px solid whitesmoke;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
