@@ -36,7 +36,7 @@ class Api::AgendaControllerTest < ActionController::TestCase
     assert json.length > 0
 
     assert_equal @agenda.id, json['id']
-    assert_equal @agenda.meeting_time, json['meeting_date']
+    assert_equal @agenda.meeting_date, json['meeting_date']
     assert_equal @venue.venue, json['venue_name']
     assert_equal @venue.map_link, json['map_link']
     assert_equal 1, json['pairings'][0]['id']

@@ -1,6 +1,6 @@
 one:
   id: 1
-  meeting_date: <%= Time.now.beginning_of_month %>
+  meeting_date: <%= Time.now %>
   venue_id: 1
-  details: '"beer1"=>"f5", "beer2"=>"zatec", "beer3"=>"native", "topic1"=>"love", "topic2"=>"happy", "topic3"=>"fun", "meeting_time"=>"<%= Time.now %>"'
+  details: '"beer1"=>"f5", "beer2"=>"zatec", "beer3"=>"native", "topic1"=>"love", "topic2"=>"happy", "topic3"=>"fun"'
   
