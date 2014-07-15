@@ -8,5 +8,6 @@ class ApplicationController < ActionController::Base
     request.variant = :desktop
     request.variant = :tablet if request.user_agent =~ /iPad/
     request.variant = :mobile if request.user_agent =~ /Mobile/
+    request.variant = :mobile
   end
 end

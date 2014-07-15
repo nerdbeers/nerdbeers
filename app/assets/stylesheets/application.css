@@ -27,3 +27,15 @@ h1, h2, h3, h4, h5, h6 {
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
+@media (min-width: 640px) and (orientation: landscape) {
+	div.agenda {
+		display: inline-block;
+		float: left;
+		width: 45%;
+	}
+	ul.fa-ul {
+		display: inline-block;
+		border-bottom: 1px solid transparent;
+		width: 90%;
+	}
+}

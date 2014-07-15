@@ -1,25 +1,26 @@
 <h2><%= @agenda.meeting_date.strftime("%B %Y") %> details</h2><br/>
 
-<ul class="fa fa-ul">
-	<li><i class="fa fa-li fa-wrench"></i> <%= @agenda.topic1 %>
-	</li>
-	<li><i class="fa fa-li fa-beer"></i>  <%= @agenda.beer1 %>
-	</li>
-</ul>
-<ul class="fa fa-ul">
-	<li><i class="fa fa-li fa-wrench"></i>  <%= @agenda.topic2 %>
-	</li>
-	<li><i class="fa fa-li fa-beer"></i>  <%= @agenda.beer2 %>
-	</li>
-</ul>
-<ul class="fa fa-ul">
-	<li><i class="fa fa-li fa-wrench"></i>  <%= @agenda.topic3 %>
-	</li>
-	<li><i class="fa fa-li fa-beer"></i>  <%= @agenda.beer3 %>
-	</li>
-</ul>
-<br/>
-<p>
+<div class="agenda pairings">
+	<ul class="fa fa-ul">
+		<li><i class="fa fa-li fa-wrench"></i> <%= @agenda.topic1 %>
+		</li>
+		<li><i class="fa fa-li fa-beer"></i>  <%= @agenda.beer1 %>
+		</li>
+	</ul>
+	<ul class="fa fa-ul">
+		<li><i class="fa fa-li fa-wrench"></i>  <%= @agenda.topic2 %>
+		</li>
+		<li><i class="fa fa-li fa-beer"></i>  <%= @agenda.beer2 %>
+		</li>
+	</ul>
+	<ul class="fa fa-ul">
+		<li><i class="fa fa-li fa-wrench"></i>  <%= @agenda.topic3 %>
+		</li>
+		<li><i class="fa fa-li fa-beer"></i>  <%= @agenda.beer3 %>
+		</li>
+	</ul>
+	</div>
+<div class="agenda when-where">
 	<b>When:</b> <%= @agenda.meeting_date.strftime("%a, %B %d %I:%M%p") %><br/>
 	<b>Where:</b> <a href='<%= @agenda.map_link %>' ><%= @agenda.venue_name %></a>
-</p>
+</div>
