@@ -1,6 +1,6 @@
 class Agenda < ActiveRecord::Base
   belongs_to :venue
-  store_accessor :details, :topic1, :topic2, :topic3, :beer1, :beer2, :beer3, :meeting_time
+  store_accessor :details, :topic1, :topic2, :topic3, :beer1, :beer2, :beer3
   
   def self.get_agenda(meetingdate)
     if meetingdate.present?
@@ -11,7 +11,7 @@ class Agenda < ActiveRecord::Base
     
   end
   
-  def self.create(meeting_date, location, topic1, topic2, topic3, beer1, beer2, beer3, meeting_time)
+  def self.create(meeting_date, location, topic1, topic2, topic3, beer1, beer2, beer3)
     agenda = Agenda.new
     agenda.meeting_date = meeting_date
     agenda.venue_id = location
@@ -21,7 +21,6 @@ class Agenda < ActiveRecord::Base
     agenda.beer1 = beer1
     agenda.beer2 = beer2
     agenda.beer3 = beer3
-    agenda.meeting_time = meeting_time
     agenda.save!
   end
   
