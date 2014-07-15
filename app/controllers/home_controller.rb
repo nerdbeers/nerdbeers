@@ -1,15 +1,17 @@
 class HomeController < ApplicationController
+  before_action :set_variant
+
   def index
-
     Metric.log_viewport_stuff(request.variant, request.user_agent)
-    
     @agenda = Agenda.get_agenda(params[:date])
+    
+    respond_to do |format|
+        format.html          # /app/views/home/index.html.erb
+        format.html.mobile    # /app/views/home/index.html+phone.erb
+        format.html.tablet   # /app/views/home/index.html+tablet.erb
+    end
   end
 
-  respond_to do |format|
-	format.html do |html|
-	  html.tablet
-	  html.mobile
-	end
-  end
 end
+
+  
