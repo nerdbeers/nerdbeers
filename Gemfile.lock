@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/FooBarWidget/gctools.git
+  revision: 15e3372c65513ae31e47ca081a50a06c21cefb6b
+  specs:
+    gctools (0.2.3)
+
+GIT
   remote: git://github.com/kern/minitest-reporters.git
   revision: 652893fbf2fb607796bfe4ff3953ab576b1432ea
   specs:
@@ -189,6 +195,7 @@ DEPENDENCIES
   ember-rails
   fast_blank
   foreman
+  gctools!
   jbuilder (~> 2.0)
   jquery-rails
   minitest-rails
