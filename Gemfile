@@ -26,6 +26,9 @@ gem "gctools", :github => "FooBarWidget/gctools", :require => false
 # perf
 gem 'fast_blank'
 
+#exception handler
+gem 'rollbar'
+
 group :development, :test do
   gem 'quiet_assets'
   gem 'spring'# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
