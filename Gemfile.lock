@@ -63,6 +63,7 @@ GEM
       execjs
     coffee-script-source (1.7.1)
     daemons (1.1.9)
+    dalli (2.7.2)
     dotenv (0.11.1)
       dotenv-deployment (~> 0.0.2)
     dotenv-deployment (0.0.2)
@@ -194,6 +195,7 @@ PLATFORMS
 DEPENDENCIES
   bullet
   coffee-rails (~> 4.0.0)
+  dalli
   dotenv-rails
   ember-rails
   fast_blank

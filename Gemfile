@@ -26,6 +26,9 @@ gem "gctools", :github => "FooBarWidget/gctools", :require => false
 # perf
 gem 'fast_blank'
 
+#cache
+gem 'dalli'
+
 #exception handler
 gem 'rollbar'
 
