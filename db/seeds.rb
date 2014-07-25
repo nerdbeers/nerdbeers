@@ -13,7 +13,7 @@ agenda = Agenda.create("2013-11-21 17:30:00", 1, "Go-lang", "RabbitMq", "Thunder
 agenda = Agenda.create("2013-12-19 17:30:00", 2, "Cloud IDEs", "Arduino Projects", "D3 Tricks", "Big Sky - Trout Slayer", "Black Mesa - Blonde", "Anchor Steam")
 
 #2014
-agenda = Agenda.create("2014-01-16 17:30:00", 3, "", "", "", "", "", "", "Thu, January 16, 2013, 5:30 PM")
+agenda = Agenda.create("2014-01-16 17:30:00", 3, "", "", "", "", "", "")
 agenda = Agenda.create("2014-02-20 17:30:00", 2, "Docker", "Growth of Coffeescript", "What makes a good API", "Narwhal", "Java Stout", "Avery ipa")
 agenda = Agenda.create("2014-03-19 17:30:00", 4, "ElasticSearch", "Side Projects", "Atom", "Coop - F5", "Coop - Native Amber", "Bridgeport IPA")
 agenda = Agenda.create("2014-04-17 17:30:00", 4, "Microsoft/Nasa OSS", "Heartbleed", "Ubuntu 14.04/Windows XP", "Coop - F5", "GreenFlash Hop Head Red", "Coop - Native Amber")
