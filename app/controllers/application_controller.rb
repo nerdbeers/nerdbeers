@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
   def set_variant
     request.variant = :desktop
-    request.variant = :mobile if request.user_agent =~ /Mobile/
-    request.variant = :tablet if request.user_agent =~ /iPad/
+    request.variant = :mobile if request.user_agent =~ /Mobile/i
+    request.variant = :tablet if request.user_agent =~ /iPad/i
   end
 end
