@@ -13,5 +13,7 @@
 <br/>
 <p>
 	<b>When:</b> <%= @agenda.meeting_date.strftime("%a, %B %d %I:%M%p") %><br/>
+	<b>When:</b> <%= @agenda.meeting_date %><br/>
 	<b>Where:</b> <a href='<%= @agenda.map_link %>' ><%= @agenda.venue_name %></a>
 </p>
+<input id="variant" type="hidden" value="desktop"/>

@@ -7,7 +7,7 @@ class HomeController < ApplicationController
     
     respond_to do |format|
         format.html          # /app/views/home/index.html.erb
-        format.html.mobile    # /app/views/home/index.html+phone.erb
+        format.html.mobile    # /app/views/home/index.html+mobile.erb
         format.html.tablet   # /app/views/home/index.html+tablet.erb
     end
   end
