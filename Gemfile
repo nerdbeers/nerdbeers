@@ -35,6 +35,7 @@ gem 'dalli'
 #exception handler
 gem 'rollbar'
 
+
 group :development, :test do
   gem 'quiet_assets'
   gem 'spring'# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
@@ -45,6 +46,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'foreman' # for the procfile
   gem 'minitest-rails'#, '~> 2.0.0.beta1'
+  gem 'minitest-rails-capybara'
   gem 'minitest-reporters', git: 'git://github.com/kern/minitest-reporters.git'
   gem 'mocha'
   #gem 'turn'
