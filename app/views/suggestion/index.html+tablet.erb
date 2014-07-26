@@ -1,0 +1,38 @@
+<h2>Suggestions</h2>
+<br/>
+
+<p><b>NerdBeers</b> belongs to you.</p>
+<p>Tell us what you want to talk about. <a href="/suggestion/new">Suggest a topic, a beer, or a pairing.</a></p>
+<br/>
+<h3><% if @everything %>All<% else %>Recent<% end %> Suggestions</h3>
+<p>
+<% if @suggestions.count == 0 %>
+	Lucky you! You have the opportunity to <a href="/suggestion/new">make the first suggestion!</a>
+<% else %>
+<div class="agenda pairings">
+	<% @suggestions.each do |s| %>
+	<ul class="fa fa-ul">
+		<% if s.topic? and s.beer? %>
+			<li class="paired"><i class="fa fa-li fa-wrench"></i>  <%= s.topic %></li>
+			<li class="paired beer"><i class="fa fa-li fa-beer"></i>  <%= s.beer %></li>
+		<% elsif s.topic? %>
+			<li class="unpaired"><i class="fa fa-li fa-wrench"></i>  <%= s.topic %></li>
+			<li class="unpaired beer"><i class="fa fa-li fa-beer"></i> n/a</li>
+		<% else %>
+			<li class="unpaired"><i class="fa fa-li fa-wrench"></i> n/a</li>
+			<li class="unpaired beer"><i class="fa fa-li fa-beer"></i>  <%= s.beer %></li>
+		<% end %>
+	</ul>
+	<% end %>
+</div>
+<br/>
+<div class="agenda float-left">
+	<% if @everything %>
+	<a href="/suggestion">Back to Recent Suggestions</a>
+	<% else %>
+	<a href="/suggestion/all">View All Suggestions</a>
+	<% end %>
+</div>
+<% end %>
+</p>
+<input id="variant" type="hidden" value="tablet"/>

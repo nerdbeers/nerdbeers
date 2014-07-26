@@ -19,3 +19,8 @@ agenda = Agenda.create("2014-03-19 17:30:00", 4, "ElasticSearch", "Side Projects
 agenda = Agenda.create("2014-04-17 17:30:00", 4, "Microsoft/Nasa OSS", "Heartbleed", "Ubuntu 14.04/Windows XP", "Coop - F5", "GreenFlash Hop Head Red", "Coop - Native Amber")
 agenda = Agenda.create("2014-05-22 17:30:00", 4, "canary.io", "Death of TDD", "KcDc", "Avery - Ellies Brown Ale", "Avery - Out of Bounds Stout", "Coop F5")
 agenda = Agenda.create("2014-06-19 17:30:00", 4, "raspberry pi projects", "vagrant+ansible dev machines", "unified logging solutions", "TBD", "TBD", "TBD")
+
+
+suggestion = Suggestion.create("The \"Rails Way\"", "Anchor Steam")
+suggestion = Suggestion.create("The Hidden Dangers of null", nil)
+suggestion = Suggestion.create(nil, "Arrogant Bastard Ale")

@@ -3,7 +3,6 @@
 --
 
 SET statement_timeout = 0;
-SET lock_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
@@ -177,6 +176,38 @@ CREATE TABLE schema_migrations (
 
 
 --
+-- Name: suggestions; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE suggestions (
+    id integer NOT NULL,
+    topic character varying(255),
+    beer character varying(255),
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: suggestions_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE suggestions_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: suggestions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE suggestions_id_seq OWNED BY suggestions.id;
+
+
+--
 -- Name: venues; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -233,6 +264,13 @@ ALTER TABLE ONLY metrics ALTER COLUMN id SET DEFAULT nextval('metrics_id_seq'::r
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY suggestions ALTER COLUMN id SET DEFAULT nextval('suggestions_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY venues ALTER COLUMN id SET DEFAULT nextval('venues_id_seq'::regclass);
 
 
@@ -258,6 +296,14 @@ ALTER TABLE ONLY chapters
 
 ALTER TABLE ONLY metrics
     ADD CONSTRAINT metrics_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: suggestions_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY suggestions
+    ADD CONSTRAINT suggestions_pkey PRIMARY KEY (id);
 
 
 --
@@ -296,4 +342,6 @@ INSERT INTO schema_migrations (version) VALUES ('20140714041715');
 INSERT INTO schema_migrations (version) VALUES ('20140715010318');
 
 INSERT INTO schema_migrations (version) VALUES ('20140715011430');
+
+INSERT INTO schema_migrations (version) VALUES ('20140726203240');
 
