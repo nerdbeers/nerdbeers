@@ -7,7 +7,7 @@ class HomeController < ApplicationController
     
     respond_to do |format|
         format.html          # /app/views/home/index.html.erb
-        format.html.mobile    # /app/views/home/index.html+mobile.erb
+        format.html.mobile   # /app/views/home/index.html+mobile.erb
         format.html.tablet   # /app/views/home/index.html+tablet.erb
     end
   end
@@ -16,9 +16,9 @@ class HomeController < ApplicationController
     Metric.log_viewport_stuff(request.variant, request.user_agent)
     
     respond_to do |format|
-        format.html          # /app/views/home/index.html.erb
-        format.html.mobile    # /app/views/home/index.html+mobile.erb
-        format.html.tablet   # /app/views/home/index.html+tablet.erb
+        format.html          # /app/views/home/suggestion.html.erb
+        format.html.mobile   # /app/views/home/suggestion.html+mobile.erb
+        format.html.tablet   # /app/views/home/suggestion.html+tablet.erb
     end
   end
 end
