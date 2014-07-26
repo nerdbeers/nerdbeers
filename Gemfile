@@ -26,6 +26,9 @@ gem "gctools", :github => "FooBarWidget/gctools", :require => false
 # perf
 gem 'fast_blank'
 
+#social
+gem "slack-notifier", :require => false
+
 #cache
 gem 'dalli'
 
@@ -51,6 +54,7 @@ end
 group :production do
   gem 'rails_12factor'
   gem 'newrelic_rpm'
+  gem 'heroku-deflater'
 end
 
 # bundle exec rake doc:rails generates the API under doc/api.
