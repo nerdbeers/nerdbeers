@@ -21,22 +21,27 @@
 	    <span class="icon-bar"></span>
 	    <span class="icon-bar"></span>
 	  </button>
-	  <a class="navbar-brand" href="#">NerdBeers</a>
+	  <a class="navbar-brand" href="/">NerdBeers</a>
 	</div>
 	<div class="navbar-collapse collapse navbar-responsive-collapse">
 	  <ul class="nav navbar-nav">
-	    <li class="active"><a href="#">home</a></li>
+	    <li><a href="/">home</a></li>
+	    <li><a href="/suggestion">suggestions</a></li>
 	  </ul>
 	</div>
 </div>
 
-<div class="container">
+<div class="container agenda-container">
 	 <%= yield %>
 </div>
 <br/><br/><br/>
 <div id="footer">
       <div class="container">
-        <p class="text-muted">Powered by Ember. Engined by Http. Data-ed by Json. Coded by Humans. Loved by All.</p>
+      	<% if @agenda.present? %>
+		<p>It's your meetup. <a href="/suggestion">What do you want to talk about next time?</a>
+		</p>
+		<% end %>
+		<p class="text-muted">Powered by Ember. Engined by Http. Data-ed by Json. Coded by Humans. Loved by All.</p>
       </div>
     </div>
 </body>

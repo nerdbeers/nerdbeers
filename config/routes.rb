@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
 
   get 'home/index'
+  get 'suggestion' => 'home#suggestion'
+
+  scope path: '/mgmt', controller: :mgmt do
+    get "/" => :list
+    get "/detail/:id" => :detail
+    post 'updateagenda' => :updateagenda
+  end
 
   scope path: '/mgmt', controller: :mgmt do
     get "/" => :list
