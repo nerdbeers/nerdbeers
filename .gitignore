@@ -17,3 +17,6 @@
 
 # Test coverage
 coverage/
+
+#IDE crap
+.idea
