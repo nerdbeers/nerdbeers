@@ -1,6 +1,6 @@
 require "test_helper"
 
-class CorrectVariantIsServedTest < Capybara::Rails::TestCase
+class HomeCorrectVariantIsServedTest < Capybara::Rails::TestCase
   test "desktop view is served correctly" do
 
     visit root_path
