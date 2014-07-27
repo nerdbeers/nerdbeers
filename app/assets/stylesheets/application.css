@@ -25,7 +25,7 @@ ul.fa-ul.sep {
 }
 h1, h2, h3, h4, h5, h6 {
 	margin-top: 5px;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 }
 @media (min-width: 640px) and (orientation: landscape) {
 	div.agenda {
@@ -37,4 +37,8 @@ h1, h2, h3, h4, h5, h6 {
 		border-bottom: 1px solid transparent;
 		width: 90%;
 	}
+}
+.field_with_errors {
+	color: red;
+	display: inline-block;
 }

@@ -11,18 +11,41 @@ class CanAddNewSuggestionTest < Capybara::Rails::TestCase
     #assert_equal "desktop", find('input#variant').value
   end
 
-  test "create new suggestion works as expected" do
+  test "create new suggestion works as expected with both title and beer provided" do
 
     visit '/suggestion/new'
 
     assert_content page, "New Suggestion"
     assert_not_nil first('#suggestion_topic')
     assert_not_nil first('#suggestion_beer')
+    fill_in 'Topic', :with => 'Any Topic'
+    fill_in 'Beer', :with => 'Any Beer'
     click_button 'Save Suggestion'
-    skip 'finish this test - should redirect to /suggestion if successfully created new suggestion' 
-    current_path.should == '/suggestion'
-    #should redirect to /suggestion if successfully created new suggestion
-    #assert_equal "desktop", find('input#variant').value
+    assert current_path == '/suggestion', 'should redirect to /suggestion if successfully created new suggestion'
+  end
+
+  test "create new suggestion works as expected with only topic provided" do
+
+    visit '/suggestion/new'
+
+    assert_content page, "New Suggestion"
+    assert_not_nil first('#suggestion_topic')
+    assert_not_nil first('#suggestion_beer')
+    fill_in 'Topic', :with => 'Any Topic'
+    click_button 'Save Suggestion'
+    assert current_path == '/suggestion', 'should redirect to /suggestion if successfully created new suggestion'
+  end
+
+  test "create new suggestion works as expected with only beer provided" do
+
+    visit '/suggestion/new'
+
+    assert_content page, "New Suggestion"
+    assert_not_nil first('#suggestion_topic')
+    assert_not_nil first('#suggestion_beer')
+    fill_in 'Beer', :with => 'Any Beer'
+    click_button 'Save Suggestion'
+    assert current_path == '/suggestion', 'should redirect to /suggestion if successfully created new suggestion'
   end
 
   test "create new suggestion with blank fields fails" do
@@ -32,10 +55,10 @@ class CanAddNewSuggestionTest < Capybara::Rails::TestCase
     assert_content page, "New Suggestion"
     assert_not_nil first('#suggestion_topic')
     assert_not_nil first('#suggestion_beer')
-    skip 'finish this test - should fail when fields are both left blank'
-    click_button 'commit'
-    #should redirect to /suggestion if successfully created new suggestion
-    #assert_equal "desktop", find('input#variant').value
+    click_button 'Save Suggestion'
+    assert current_path == '/suggestion/new', 'should remain at /suggestion/new if create new suggestion fails'
+    assert_not_nil first('div.field_with_errors'), 'should be UI cue that error has occured'
+    assert_not_nil first('div.how_to_fix_errors'), 'should be UI message to suggest remedy'
   end
 
   test "create new suggestion with whitespace fields fails" do
@@ -45,9 +68,11 @@ class CanAddNewSuggestionTest < Capybara::Rails::TestCase
     assert_content page, "New Suggestion"
     assert_not_nil first('#suggestion_topic')
     assert_not_nil first('#suggestion_beer')
-    skip 'finish this test - should fail when fields are both whitespace only'
-    click_button 'commit'
-    #should redirect to /suggestion if successfully created new suggestion
-    #assert_equal "desktop", find('input#variant').value
+    fill_in 'Topic', :with => ' '
+    fill_in 'Beer', :with => ' '
+    click_button 'Save Suggestion'
+    assert current_path == '/suggestion/new', 'should remain at /suggestion/new if create new suggestion fails'
+    assert_not_nil first('div.field_with_errors'), 'should be UI cue that error has occured'
+    assert_not_nil first('div.how_to_fix_errors'), 'should be UI message to suggest remedy'
   end
 end

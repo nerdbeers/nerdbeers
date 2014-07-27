@@ -1,4 +1,19 @@
 <h2>New Suggestion</h2>
+<div>
+You can suggest:
+  <ul>
+    <li>A Topic</li>
+    <li>A Beer</li>
+    <li>Both a Topic and a Beer</li>    
+  </ul>
+</div>
+
+<% if @suggestion.errors.any? %>
+<div class="how_to_fix_errors field_with_errors">
+  Please provide either a Topic, a Beer, or both.
+</div>
+<% end %>
+
 <%= form_for :suggestion do |f| %>
   <p>
     <%= f.label :topic %><br>
