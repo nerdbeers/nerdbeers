@@ -4,9 +4,13 @@ class Agenda < ActiveRecord::Base
   
   def self.get_agenda(meetingdate)
     if meetingdate.present?
-      Agenda.joins(:venue).select('agendas.*, venues.venue as venue_name, venues.map_link as map_link').find_by(:meeting_date => meetingdate)  
+      Rails.cache.fetch(["recentagenda",meetingdate], :expires_in => 5.minutes) {
+        Agenda.joins(:venue).select('agendas.*, venues.venue as venue_name, venues.map_link as map_link').find_by(:meeting_date => meetingdate)  
+        }
     else
-      Agenda.joins(:venue).select('agendas.*, venues.venue as venue_name, venues.map_link as map_link').last
+      Rails.cache.fetch("last_agenda", :expires_in => 5.minutes) {
+        Agenda.joins(:venue).select('agendas.*, venues.venue as venue_name, venues.map_link as map_link').last
+      }
     end
     
   end
