@@ -1,7 +1,7 @@
 class SuggestionValidator < ActiveModel::Validator
   def validate(record)
-    unless record.topic.nil? or record.beer.nil?
-      record.errors[:topic] << 'Need a Topic or a Beer'
+    if record.topic.blank? and record.beer.blank?
+      record.errors[:topic] << 'Either a Topic or a Beer is required.'
     end
   end
 end
