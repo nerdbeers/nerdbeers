@@ -18,7 +18,9 @@ class CanAddNewSuggestionTest < Capybara::Rails::TestCase
     assert_content page, "New Suggestion"
     assert_not_nil first('#suggestion_topic')
     assert_not_nil first('#suggestion_beer')
-    skip 'finish this test - should redirect to /suggestion if successfully created new suggestion'
+    click_button 'Save Suggestion'
+    skip 'finish this test - should redirect to /suggestion if successfully created new suggestion' 
+    current_path.should == '/suggestion'
     #should redirect to /suggestion if successfully created new suggestion
     #assert_equal "desktop", find('input#variant').value
   end
@@ -31,6 +33,7 @@ class CanAddNewSuggestionTest < Capybara::Rails::TestCase
     assert_not_nil first('#suggestion_topic')
     assert_not_nil first('#suggestion_beer')
     skip 'finish this test - should fail when fields are both left blank'
+    click_button 'commit'
     #should redirect to /suggestion if successfully created new suggestion
     #assert_equal "desktop", find('input#variant').value
   end
@@ -43,6 +46,7 @@ class CanAddNewSuggestionTest < Capybara::Rails::TestCase
     assert_not_nil first('#suggestion_topic')
     assert_not_nil first('#suggestion_beer')
     skip 'finish this test - should fail when fields are both whitespace only'
+    click_button 'commit'
     #should redirect to /suggestion if successfully created new suggestion
     #assert_equal "desktop", find('input#variant').value
   end
