@@ -2,8 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  
-  
+
   def page_not_found
     respond_to do |format|
       format.html { render template: 'errors/not_found', layout: 'layouts/application', status: 404 }
@@ -17,7 +16,7 @@ class ApplicationController < ActionController::Base
       format.all  { render nothing: true, status: 500}
     end
   end
-  
+
   private
   def set_variant
     request.variant = :desktop
