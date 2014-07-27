@@ -16,7 +16,6 @@ class HomeControllerTest < ActionController::TestCase
     assert_response :success
     
     assert_match /mobile/i, @request.variant.to_s #we have the correct variant
-    #assert_template "home/index+mobile" # but this isn't the correct view
     assert_template layout: "layouts/application"
   end
 
@@ -26,8 +25,6 @@ class HomeControllerTest < ActionController::TestCase
     assert_response :success
     
     assert_match /tablet/i, @request.variant.to_s #we have the correct variant
-    #assert_template "home/index+tablet" # but this isn't the correct view
     assert_template layout: "layouts/application"
   end
-
 end
