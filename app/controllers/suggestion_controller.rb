@@ -6,12 +6,6 @@ class SuggestionController < ApplicationController
     @suggestions = if @everything then Suggestion.all else Suggestion.last(5) end
     @suggestions = @suggestions.reverse
     Metric.log_viewport_stuff(request.variant, request.user_agent)
-    
-    respond_to do |format|
-        format.html          # /app/views/suggestion/index.html.erb
-        format.html.mobile   # /app/views/suggestion/index.html+mobile.erb
-        format.html.tablet   # /app/views/suggestion/index.html+tablet.erb
-    end
   end
 
   def new
