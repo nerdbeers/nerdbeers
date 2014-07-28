@@ -4,11 +4,12 @@ class SuggestionController < ApplicationController
   before_action :log_viewport_stuff, except: :create
 
   def index
-    @suggestions = if @everything = params[:all].presence
-                     Suggestion.recent
-                   else
+    @suggestions = if params[:viewing] == :recent
                      Suggestion.recent.take(5)
+                   else
+                     Suggestion.recent
                    end
+    @viewing = params[:viewing]
   end
 
   def new
