@@ -1,6 +1,7 @@
 class SuggestionController < ApplicationController
 
   before_action :set_variant
+  before_action :log_viewport_stuff, except: :create
 
   def index
     @suggestions = if @everything = params[:all].presence
@@ -8,11 +9,9 @@ class SuggestionController < ApplicationController
                    else
                      Suggestion.recent.take(5)
                    end
-    Metric.log_viewport_stuff(request.variant, request.user_agent)
   end
 
   def new
-    Metric.log_viewport_stuff(request.variant, request.user_agent)
   end
 
   def create
