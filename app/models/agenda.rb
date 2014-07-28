@@ -15,19 +15,6 @@ class Agenda < ActiveRecord::Base
     
   end
   
-  def self.create(meeting_date, location, topic1, topic2, topic3, beer1, beer2, beer3)
-    agenda = Agenda.new
-    agenda.meeting_date = meeting_date
-    agenda.venue_id = location
-    agenda.topic1 = topic1
-    agenda.topic2 = topic2
-    agenda.topic3 = topic3
-    agenda.beer1 = beer1
-    agenda.beer2 = beer2
-    agenda.beer3 = beer3
-    agenda.save!
-  end
-  
 end
 
 =begin
