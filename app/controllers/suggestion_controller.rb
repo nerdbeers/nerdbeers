@@ -5,9 +5,9 @@ class SuggestionController < ApplicationController
 
   def index
     @suggestions = if params[:viewing] == :recent
-                     Suggestion.recent.take(5)
+                     Suggestion.most_recent_first.take(5)
                    else
-                     Suggestion.recent
+                     Suggestion.most_recent_first
                    end
     @viewing = params[:viewing]
   end
