@@ -1,0 +1,16 @@
+<%= form_for :suggestion do |f| %>
+  <p>
+    <%= f.label :topic %><br>
+    <%= f.text_field :topic %>
+  </p>
+ 
+  <p>
+    <%= f.label :beer %><br>
+    <%= f.text_field :beer %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+

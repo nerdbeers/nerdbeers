@@ -11,10 +11,6 @@ class Suggestion < ActiveRecord::Base
   include ActiveModel::Validations
   validates_with SuggestionValidator
  
-  def self.create(topic, beer)
-    s = Suggestion.new
-    s.topic = topic
-    s.beer = beer
-    s.save!
-  end
+  scope :most_recent_first, -> { order 'created_at DESC' }
+
  end

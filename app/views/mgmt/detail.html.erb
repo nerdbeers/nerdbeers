@@ -32,7 +32,7 @@
 	    <input type="text" class="form-control" id="beer3" name="beer3" value="<%= @agenda.beer3 %>">
 	  </div>
 	  <br/>
-	   Venue: <%= @agenda.venue_name %><br/>
+	   Venue: <%= @agenda.venue ? @agenda.venue.venue : 'Not Set' %><br/>
 	   <button type="submit" class="btn btn-default">Submit</button>	   
    </form>
 	 </p>

@@ -20,3 +20,7 @@ coverage/
 
 #IDE crap
 .idea
+
+database.yml
+
+*.sqlite3
