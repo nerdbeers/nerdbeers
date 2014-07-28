@@ -19,7 +19,7 @@ class MgmtController < ApplicationController
   protected
   def authenticate
     authenticate_or_request_with_http_basic do |username, password|
-      username == "beer" && password == "code"
+      username == ENV["MGMT_LOGIN"] && password == ENV["MGMT_PASSWORD"]
     end
   end
 end
