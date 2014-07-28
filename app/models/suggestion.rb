@@ -13,10 +13,4 @@ class Suggestion < ActiveRecord::Base
  
   scope :most_recent_first, -> { order 'created_at DESC' }
 
-  def self.create(topic, beer)
-    s = Suggestion.new
-    s.topic = topic
-    s.beer = beer
-    s.save!
-  end
  end
