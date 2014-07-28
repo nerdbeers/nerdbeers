@@ -1,12 +1,12 @@
 class SuggestionController < ApplicationController
 
   before_action :set_variant
+  before_action :log_viewport_stuff, except: :create
 
   def index
     @everything = params[:all].presence
     @suggestions = if @everything then Suggestion.all else Suggestion.last(5) end
     @suggestions = @suggestions.reverse
-    Metric.log_viewport_stuff(request.variant, request.user_agent)
     
     respond_to do |format|
         format.html          # /app/views/suggestion/index.html.erb
@@ -19,9 +19,20 @@ class SuggestionController < ApplicationController
     if request.post?
       @suggestion = Suggestion.new(suggestion_params)
       redirect_to controller: 'suggestion', action: 'index', status: 303 if @suggestion.save
-    else
-      Metric.log_viewport_stuff(request.variant, request.user_agent)
     end
+    @suggestions = if @everything = params[:all].presence
+                     Suggestion.recent
+                   else
+                     Suggestion.recent.take(5)
+                   end
+  end
+
+  def new
+  end
+
+  def create
+    @suggestion = Suggestion.new(suggestion_params)
+    redirect_to controller: 'suggestion', action: 'index', status: 303 if @suggestion.save
   end
 
   private

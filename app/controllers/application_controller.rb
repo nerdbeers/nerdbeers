@@ -17,6 +17,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def log_viewport_stuff
+    Metric.log_viewport_stuff(request.variant, request.user_agent)
+  end
+
   private
   def set_variant
     request.variant = :desktop

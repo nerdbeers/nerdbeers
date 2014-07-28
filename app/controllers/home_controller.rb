@@ -1,8 +1,8 @@
 class HomeController < ApplicationController
   before_action :set_variant
+  before_action :log_viewport_stuff
 
   def index
-    Metric.log_viewport_stuff(request.variant, request.user_agent)
     @agenda = Agenda.get_agenda(params[:date])
 
     respond_to do |format|
