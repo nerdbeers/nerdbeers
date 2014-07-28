@@ -2,8 +2,8 @@ require 'test_helper'
 
 class MgmtControllerTest < ActionController::TestCase
   before do
-    @user = 'beer'
-    @password = 'code'
+    @user = ENV["MGMT_LOGIN"]
+    @password = ENV["MGMT_PASSWORD"]
     @agenda = agendas(:one)
   end
 
@@ -13,6 +13,7 @@ class MgmtControllerTest < ActionController::TestCase
   end
 
   test "should get orders list" do
+    
     @request.env['HTTP_AUTHORIZATION'] = 'Basic ' + Base64.encode64(@user + ':' + @password )
     get :list
     assert_response :success
