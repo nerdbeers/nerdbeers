@@ -4,7 +4,7 @@
 <p><b>NerdBeers</b> belongs to you.</p>
 <p>Tell us what you want to talk about. <a href="/suggestion/new">Suggest a topic, a beer, or a pairing.</a></p>
 <br/>
-<h3><% if @everything %>All<% else %>Recent<% end %> Suggestions</h3>
+<h3><%= @viewing.to_s.capitalize %> Suggestions</h3>
 <p>
 <% if @suggestions.count == 0 %>
 	Lucky you! You have the opportunity to <a href="/suggestion/new">make the first suggestion!</a>
@@ -26,11 +26,11 @@
 	<% end %>
 </div>
 <br/>
-<div class="pairings">
-	<% if @everything %>
-	<a href="/suggestion">Back to Recent Suggestions</a>
-	<% else %>
+<div class="agenda float-left">
+	<% if @viewing == :recent %>
 	<a href="/suggestion/all">View All Suggestions</a>
+	<% else %>
+	<a href="/suggestion">Back to Recent Suggestions</a>
 	<% end %>
 </div>
 <% end %>
