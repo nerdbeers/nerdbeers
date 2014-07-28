@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   scope path: '/suggestion', controller: :suggestion do
     get  '/'     => :index
     get  '/new'  => :new
-    post '/new'  => :new
+    post '/new'  => :create
     get  '/:all' => :index
   end
 

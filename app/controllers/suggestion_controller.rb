@@ -12,12 +12,12 @@ class SuggestionController < ApplicationController
   end
 
   def new
-    if request.post?
-      @suggestion = Suggestion.new(suggestion_params)
-      redirect_to controller: 'suggestion', action: 'index', status: 303 if @suggestion.save
-    else
-      Metric.log_viewport_stuff(request.variant, request.user_agent)
-    end
+    Metric.log_viewport_stuff(request.variant, request.user_agent)
+  end
+
+  def create
+    @suggestion = Suggestion.new(suggestion_params)
+    redirect_to controller: 'suggestion', action: 'index', status: 303 if @suggestion.save
   end
 
   private
