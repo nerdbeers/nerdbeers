@@ -2,9 +2,11 @@ class SuggestionController < ApplicationController
   before_action :set_variant
 
   def index
-    @everything = params[:all].presence
-    @suggestions = if @everything then Suggestion.all else Suggestion.last(5) end
-    @suggestions = @suggestions.reverse
+    @suggestions = if @everything = params[:all].presence
+                     Suggestion.recent
+                   else
+                     Suggestion.recent.take(5)
+                   end
     Metric.log_viewport_stuff(request.variant, request.user_agent)
   end
 
