@@ -7,7 +7,7 @@ class MgmtController < ApplicationController
   end
   
   def detail
-    @agenda = Agenda.joins(:venue).select('agendas.*, venues.venue as venue_name, venues.map_link as map_link').find(params[:id])
+    @agenda = Agenda.find params[:id]
   end
   
   def updateagenda
