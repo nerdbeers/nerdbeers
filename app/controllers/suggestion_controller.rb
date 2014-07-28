@@ -4,11 +4,7 @@ class SuggestionController < ApplicationController
   before_action :log_viewport_stuff, except: :create
 
   def index
-    @suggestions = if params[:viewing] == :recent
-                     Suggestion.most_recent_first.take(5)
-                   else
-                     Suggestion.most_recent_first
-                   end
+    @suggestions = suggestions
     @viewing = params[:viewing]
   end
 
@@ -24,6 +20,11 @@ class SuggestionController < ApplicationController
 
   def suggestion_params
     params.require(:suggestion).permit(:topic, :beer)
+  end
+
+  def suggestions
+    suggestions = Suggestion.most_recent_first 
+    params[:viewing] == :recent ? suggestions.take(5) : suggestions
   end
 
 end
