@@ -2,3 +2,4 @@
 
 heroku:
   rake dbmaint:vacuum : "Daily at 23:04 UTC"
+  rake agendacreator:new : "Daily at 9:30 UTC"

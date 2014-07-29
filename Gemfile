@@ -29,6 +29,9 @@ gem 'fast_blank'
 #social
 gem "slack-notifier", :require => false
 
+#date manipulation
+gem "chronic"
+
 #cache
 gem 'dalli'
 
