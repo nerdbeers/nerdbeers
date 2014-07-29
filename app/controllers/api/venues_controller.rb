@@ -1,9 +1,9 @@
-class Api::VenueController < ApplicationController
+class Api::VenuesController < ApplicationController
 
-  def list
+  def index
     @venues = Venue.all
  #   render :json => venues, status: 200
-    render "api/venues/list", :formats => [:json], :handlers => [:jbuilder], status: 200
+    render "api/venues/index", :formats => [:json], :handlers => [:jbuilder], status: 200
   end
 
   def show
