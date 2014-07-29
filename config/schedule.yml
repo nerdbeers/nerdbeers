@@ -1,0 +1,4 @@
+# this is the handwritten schedule of jobs that occur
+
+heroku:
+  rake dbmaint:vacuum : "Daily at 23:04 UTC"
