@@ -1,13 +1,13 @@
 require 'test_helper'
 
-class Api::VenueControllerTest < ActionController::TestCase
+class Api::VenuesControllerTest < ActionController::TestCase
 
   test "should route to index" do
     assert_routing '/api/chapter/list.json', {controller: "api/chapter", action: "list", format: "json"}
   end
 
   test "should get list of venues" do
-    get :list
+    get :index
     assert_equal Mime::JSON, response.content_type
     json = JSON.parse(@response.body)
     assert json.length > 0
