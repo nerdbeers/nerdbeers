@@ -2,7 +2,7 @@ Number of Meetings: <%= @agendas.size %>
 <hr/>
 <table>
 	<% @agendas.each do |a|%>
-	<tr><td><%= a.meeting_date%></td><td><%= a.topic1 %></td>
+	<tr><td><%= a.meeting_date.strftime("%m/%d/%y") %> </td><td><%= a.topic1 %></td>
 		<td><a href="/mgmt/detail/<%= a.id %>">Details</a></td>
 	<% end %>
 </table>

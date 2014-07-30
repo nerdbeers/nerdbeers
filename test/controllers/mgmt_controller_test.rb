@@ -17,6 +17,7 @@ class MgmtControllerTest < ActionController::TestCase
     @request.env['HTTP_AUTHORIZATION'] = 'Basic ' + Base64.encode64(@user + ':' + @password )
     get :list
     assert_response :success
+    assert_template layout: "layouts/mgmt"
 
   end
 
@@ -26,6 +27,7 @@ class MgmtControllerTest < ActionController::TestCase
     params = {id: @agenda.id }
     get :detail, params
     assert_response :success
+    assert_template layout: "layouts/mgmt"
   end
 
 

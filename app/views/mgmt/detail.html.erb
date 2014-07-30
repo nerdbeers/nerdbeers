@@ -1,5 +1,5 @@
 	<h2>Your meeting Details:</h2><br/>
-<form class="form-inline" role="form" action="/mgmt/updateagenda" method="post">
+	<form class="form-inline" role="form" action="/mgmt/updateagenda" method="post">
 	<%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
 	<input type="hidden" name="agenda_id" value=<%= @agenda.id %> />
 	  <div class="form-group">
