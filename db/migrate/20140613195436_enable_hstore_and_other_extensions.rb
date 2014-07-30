@@ -1,7 +1,13 @@
 class EnableHstoreAndOtherExtensions < ActiveRecord::Migration
-  def change
-    execute 'CREATE EXTENSION hstore'
-    execute 'CREATE EXTENSION pg_stat_statements'
-#    execute 'CREATE EXTENSION adminpack'
+
+  def self.up
+    execute "CREATE EXTENSION IF NOT EXISTS hstore"
+    execute 'CREATE EXTENSION IF NOT EXISTS pg_stat_statements'
   end
+
+  def self.down
+    execute "DROP EXTENSION IF EXISTS hstore"
+    execute 'DROP EXTENSION IF EXISTS pg_stat_statements'
+  end
+
 end
