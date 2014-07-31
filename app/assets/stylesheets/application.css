@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (min-width: 640px) and (orientation: landscape) {
 	div.agenda {
-		display: block;
+		display: inline-block;
 		width: 45%;
 	}
 	ul.fa-ul {
@@ -37,6 +37,9 @@ h1, h2, h3, h4, h5, h6 {
 		border-bottom: 1px solid transparent;
 		width: 90%;
 	}
+}
+.pairings {
+	display: block;
 }
 .field_with_errors {
 	color: red;
