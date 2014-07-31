@@ -15,12 +15,14 @@ getting started
 
 ## The database part
 ```
+> cp config/database.yml.default config/database.yml
 > pg_ctl start -D /usr/local/var/postgres
 > rake db:create
 > rake db:migrate
 > rake db:schema:load
 
-> If you need some basic data, load the seed file with  rake db:seed
+> If necessary, season config/database.yml to taste.
+> If you need some basic data, load the seed file with rake db:seed
 ```
 
 ## The test part
