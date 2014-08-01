@@ -14,6 +14,10 @@ describe MgmtController do
     controller.is_a?(ApplicationController).must_equal true
   end
 
+  before do
+    Agenda.delete_all
+  end
+
   describe "list" do
 
     it "should return the agendas" do
@@ -47,6 +51,47 @@ describe MgmtController do
       controller.detail
 
       controller.instance_eval { @agenda }.must_be_same_as agenda
+
+    end
+
+  end
+
+  describe "updating an agenda" do
+
+    before do
+      controller.stubs(:redirect_to)
+    end
+
+    [
+      [:topic1, 'a'],
+      [:topic1, 'b'],
+      [:topic2, 'c'],
+      [:topic2, 'd'],
+      [:topic3, 'e'],
+      [:topic3, 'f'],
+      [:beer1,  'g'],
+      [:beer2,  'h'],
+      [:beer3,  'i'],
+    ].map { |x| Struct.new(:field, :value).new(*x) }.each do |example|
+
+      describe "updating the data in multiple ways" do
+
+        it "should redirect to the management controller page" do
+
+          agenda = Agenda.create(meeting_date: Time.now)
+          params[:agenda_id] = agenda.id
+
+          params[example.field] = example.value
+
+          controller.updateagenda
+
+          agenda = Agenda.find agenda.id
+
+          agenda.send(example.field).must_equal example.value
+
+        end
+
+      end
 
     end
 
