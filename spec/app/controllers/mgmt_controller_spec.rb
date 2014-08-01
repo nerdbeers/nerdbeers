@@ -58,8 +58,18 @@ describe MgmtController do
 
   describe "updating an agenda" do
 
+    let(:agenda) { Agenda.create(meeting_date: Time.now) }
+
     before do
       controller.stubs(:redirect_to)
+      params[:agenda_id] = agenda.id
+    end
+
+    it "should redirect to mgmt#list" do
+      controller.expects(:redirect_to).with(controller: 'mgmt',
+                                            action:     'list',
+                                            status:     303)
+      controller.updateagenda
     end
 
     [
@@ -78,16 +88,13 @@ describe MgmtController do
 
         it "should redirect to the management controller page" do
 
-          agenda = Agenda.create(meeting_date: Time.now)
-          params[:agenda_id] = agenda.id
-
           params[example.field] = example.value
 
           controller.updateagenda
 
-          agenda = Agenda.find agenda.id
+          result = Agenda.find agenda.id
 
-          agenda.send(example.field).must_equal example.value
+          result.send(example.field).must_equal example.value
 
         end
 
