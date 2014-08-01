@@ -80,8 +80,11 @@ describe MgmtController do
       [:topic3, 'e'],
       [:topic3, 'f'],
       [:beer1,  'g'],
+      [:beer1,  'g2'],
       [:beer2,  'h'],
+      [:beer2,  'hh'],
       [:beer3,  'i'],
+      [:beer3,  'magic'],
     ].map { |x| Struct.new(:field, :value).new(*x) }.each do |example|
 
       describe "updating the data in multiple ways" do
