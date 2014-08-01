@@ -2,10 +2,12 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
-  get  '/suggestion/'     => "suggestion#index", viewing: :recent
-  get  '/suggestion/all'  => "suggestion#index", viewing: :all
-  get  '/suggestion/new'  => "suggestion#new"
-  post '/suggestion/new'  => "suggestion#create"
+  scope path: '/suggestion', controller: :suggestion do
+    get  '/'            => :index, defaults: { viewing: :recent }
+    get  '/new'         => :new
+    post '/new'         => :create
+    get  '/:all'        => :index, defaults: { viewing: :all }
+  end
 
   scope path: '/mgmt', controller: :mgmt do
     get  '/'            => :list
