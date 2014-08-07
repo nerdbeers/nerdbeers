@@ -3,7 +3,7 @@ class MgmtController < ApplicationController
   layout "mgmt"
 
   def list
-    @agendas = Agenda.all
+    @agendas = Agenda.all.order("id DESC")
   end
   
   def detail
