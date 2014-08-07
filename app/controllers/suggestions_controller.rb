@@ -1,4 +1,4 @@
-class SuggestionController < ApplicationController
+class SuggestionsController < ApplicationController
 
   before_action :set_variant
   before_action :log_viewport_stuff, except: :create
@@ -13,7 +13,7 @@ class SuggestionController < ApplicationController
 
   def create
     @suggestion = Suggestion.new(suggestion_params)
-    redirect_to controller: 'suggestion', action: 'index', status: 303 if @suggestion.save
+    redirect_to controller: 'suggestions', action: 'index', status: 303 if @suggestion.save
   end
 
   private
