@@ -1,6 +1,7 @@
 class Agenda < ActiveRecord::Base
   belongs_to :venue
   store_accessor :details, :topic1, :topic2, :topic3, :beer1, :beer2, :beer3
+  validates :meeting_date, presence: true
   
   def self.get_agenda(meetingdate)
     if meetingdate.present?
