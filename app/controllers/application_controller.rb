@@ -18,7 +18,9 @@ class ApplicationController < ActionController::Base
   end
 
   def log_viewport_stuff
-    Metric.log_viewport_stuff(request.variant, request.user_agent)
+    unless ['ruby', 'sitewarm', 'newrelicpinger'].any? { |filter| request.user_agent.to_s.downcase.include?(filter) }
+      Metric.log_viewport_stuff(request.variant, request.user_agent)
+    end
   end
 
   private
