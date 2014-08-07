@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
-  scope path: '/suggestion', controller: :suggestion do
+  scope path: '/suggestions', controller: :suggestions do
     get  '/'            => :index, defaults: { viewing: :recent }
     get  '/new'         => :new
     post '/new'         => :create

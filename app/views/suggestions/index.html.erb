@@ -2,12 +2,12 @@
 <br/>
 
 <p><b>NerdBeers</b> belongs to you.</p>
-<p>Tell us what you want to talk about. <a href="/suggestion/new">Suggest a topic, a beer, or a pairing.</a></p>
+<p>Tell us what you want to talk about. <a href="/suggestions/new">Suggest a topic, a beer, or a pairing.</a></p>
 <br/>
 <h3 id="suggestion-title"><%= @viewing.to_s.capitalize %> Suggestions</h3>
 <p>
 <% if @suggestions.count == 0 %>
-	Lucky you! You have the opportunity to <a href="/suggestion/new">make the first suggestion!</a>
+	Lucky you! You have the opportunity to <a href="/suggestions/new">make the first suggestion!</a>
 <% else %>
 <div class="agenda pairings">
 	<% @suggestions.each do |s| %>
@@ -28,9 +28,9 @@
 <br/>
 <div class="agenda pairings">
 	<% if @viewing == :recent %>
-	<a href="/suggestion/all">View All Suggestions</a>
+	<a href="/suggestions/all">View All Suggestions</a>
 	<% else %>
-	<a href="/suggestion">Back to Recent Suggestions</a>
+	<a href="/suggestions">Back to Recent Suggestions</a>
 	<% end %>
 </div>
 <% end %>

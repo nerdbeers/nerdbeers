@@ -3,7 +3,7 @@ require "test_helper"
 class SuggestionsCorrectVariantIsServedTest < Capybara::Rails::TestCase
   test "suggestions desktop view is served correctly" do
 
-    visit '/suggestion'
+    visit '/suggestions'
 
     assert_not_nil first('h3#suggestion-title')
     assert_equal "Recent Suggestions", find('h3#suggestion-title').text
@@ -14,7 +14,7 @@ class SuggestionsCorrectVariantIsServedTest < Capybara::Rails::TestCase
 
   test "all suggestions desktop view is served correctly" do
 
-    visit '/suggestion/all'
+    visit '/suggestions/all'
 
     assert_not_nil first('h3#suggestion-title')
     assert_equal "All Suggestions", find('h3#suggestion-title').text
