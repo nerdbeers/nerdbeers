@@ -76,7 +76,7 @@ SET default_with_oids = false;
 
 CREATE TABLE agendas (
     id integer NOT NULL,
-    meeting_date date,
+    meeting_date timestamp without time zone NOT NULL,
     venue_id integer,
     details hstore,
     created_at timestamp without time zone,
@@ -132,36 +132,6 @@ CREATE SEQUENCE chapters_id_seq
 --
 
 ALTER SEQUENCE chapters_id_seq OWNED BY chapters.id;
-
-
---
--- Name: infections; Type: TABLE; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE TABLE infections (
-    id integer NOT NULL,
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone
-);
-
-
---
--- Name: infections_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE infections_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: infections_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE infections_id_seq OWNED BY infections.id;
 
 
 --
@@ -287,13 +257,6 @@ ALTER TABLE ONLY chapters ALTER COLUMN id SET DEFAULT nextval('chapters_id_seq':
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY infections ALTER COLUMN id SET DEFAULT nextval('infections_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
---
-
 ALTER TABLE ONLY metrics ALTER COLUMN id SET DEFAULT nextval('metrics_id_seq'::regclass);
 
 
@@ -325,14 +288,6 @@ ALTER TABLE ONLY agendas
 
 ALTER TABLE ONLY chapters
     ADD CONSTRAINT chapters_pkey PRIMARY KEY (id);
-
-
---
--- Name: infections_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
---
-
-ALTER TABLE ONLY infections
-    ADD CONSTRAINT infections_pkey PRIMARY KEY (id);
 
 
 --
@@ -389,6 +344,3 @@ INSERT INTO schema_migrations (version) VALUES ('20140715010318');
 INSERT INTO schema_migrations (version) VALUES ('20140715011430');
 
 INSERT INTO schema_migrations (version) VALUES ('20140726203240');
-
-INSERT INTO schema_migrations (version) VALUES ('20140805023830');
-
