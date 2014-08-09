@@ -11,8 +11,7 @@ class Api::AgendaControllerTest < ActionController::TestCase
   	assert_response :success
     assert_equal Mime::JSON, response.content_type
 
-    json = JSON.parse(@response.body)
-    assert json.length > 0
+    assert json(@response.body).length > 0
   end
 
   test "should get past agenda" do
@@ -21,8 +20,7 @@ class Api::AgendaControllerTest < ActionController::TestCase
   	assert_response :success
     assert_equal Mime::JSON, response.content_type
 
-    json = JSON.parse(@response.body)
-    assert json.length > 0
+    assert json(@response.body).length > 0
   end
 
   test "validate signature" do
@@ -32,24 +30,25 @@ class Api::AgendaControllerTest < ActionController::TestCase
   	assert_response :success
     assert_equal Mime::JSON, response.content_type
 
-    json = JSON.parse(@response.body)
-    assert json.length > 0
+    payload = json(@response.body)
+    assert payload.length > 0
 
-    assert_equal @agenda.id, json['id']
-    assert_equal @agenda.meeting_date, json['meeting_date']
-    assert_equal @venue.venue, json['venue_name']
-    assert_equal @venue.map_link, json['map_link']
-    assert_equal 1, json['pairings'][0]['id']
-    assert_equal @agenda.topic1, json['pairings'][0]['topic']
-    assert_equal @agenda.beer1, json['pairings'][0]['beer']
+    assert_equal @agenda.id, payload[:id]
+    assert_equal @agenda.meeting_date, payload[:meeting_date]
+    assert_equal @venue.venue, payload[:venue_name]
+    assert_equal @venue.map_link, payload[:map_link]
+    assert_equal 1, payload[:pairings][0][:id]
+    assert_equal @agenda.topic1, payload[:pairings][0][:topic]
+    assert_equal @agenda.beer1, payload[:pairings][0][:beer]
 
-    assert_equal 2, json['pairings'][1]['id']
-    assert_equal @agenda.topic2, json['pairings'][1]['topic']
-    assert_equal @agenda.beer2, json['pairings'][1]['beer']
+    assert_equal 2, payload[:pairings][1][:id]
+    assert_equal @agenda.topic2, payload[:pairings][1][:topic]
+    assert_equal @agenda.beer2, payload[:pairings][1][:beer]
     
-    assert_equal 3, json['pairings'][2]['id']
-    assert_equal @agenda.topic3, json['pairings'][2]['topic']
-    assert_equal @agenda.beer3, json['pairings'][2]['beer']
+    assert_equal 3, payload[:pairings][2][:id]
+    assert_equal @agenda.topic3, payload[:pairings][2][:topic]
+    assert_equal @agenda.beer3, payload[:pairings][2][:beer]
+    
   end
 
 end

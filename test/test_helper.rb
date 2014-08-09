@@ -48,11 +48,11 @@ reporter_options = { color: true, slow_count: 5 }
 Minitest::Reporters.use! [Minitest::Reporters::AwesomeReporter.new(reporter_options)]
 
 class ActiveSupport::TestCase
-    ActiveRecord::Migration.check_pending!
+  ActiveRecord::Migration.check_pending!
 
   fixtures :all
 
   def json(body)
-	   JSON.parse(body, symbolize_names: true)
+	  JSON.parse(body, symbolize_names: true)
   end
 end
