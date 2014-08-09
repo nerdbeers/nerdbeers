@@ -22,12 +22,8 @@ Rails.application.routes.draw do
         get '/' => :show
       end
     end
-
-    scope path: '/chapter', controller: :chapter do
-      get '/list'     => :list
-      get '/show/:id' => :show
-    end
-
+    
+    
     resources :venues, :only =>[:index,:show]
     resources :topic, :only =>[:show]
 
