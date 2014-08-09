@@ -14,7 +14,7 @@ class Api::AgendaController < ApplicationController
     pairings = pairing1, pairing2, pairing3
 
     @rawr = {:id => agenda.id, :meeting_date => agenda.meeting_date, :pairings => pairings, :venue_name => agenda.venue_name, :map_link => agenda.map_link}
-	render "api/agenda/show", :formats => [:json], :handlers => [:jbuilder], status: 200
+    render json: @rawr
   end
 
 end
