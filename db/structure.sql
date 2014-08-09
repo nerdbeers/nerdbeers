@@ -3,6 +3,7 @@
 --
 
 SET statement_timeout = 0;
+SET lock_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
@@ -322,6 +323,14 @@ CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (v
 
 
 --
+-- Name: fk_venue_id; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY agendas
+    ADD CONSTRAINT fk_venue_id FOREIGN KEY (venue_id) REFERENCES venues(id);
+
+
+--
 -- PostgreSQL database dump complete
 --
 
@@ -344,3 +353,6 @@ INSERT INTO schema_migrations (version) VALUES ('20140715010318');
 INSERT INTO schema_migrations (version) VALUES ('20140715011430');
 
 INSERT INTO schema_migrations (version) VALUES ('20140726203240');
+
+INSERT INTO schema_migrations (version) VALUES ('20140809040807');
+

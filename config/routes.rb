@@ -16,20 +16,16 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    scope path: '/agenda', controller: :agenda do
+
+    resources :agenda, :only =>[] do
+      collection do
         get '/' => :show
+      end
     end
-
-    scope path: '/chapter', controller: :chapter do
-      get '/list'     => :list
-      get '/show/:id' => :show
-    end
-
+    
+    
     resources :venues, :only =>[:index,:show]
-
-    scope path: '/topic', controller: :topic do
-      get '/:id' => :show
-    end
+    resources :topic, :only =>[:show]
 
   end
 
