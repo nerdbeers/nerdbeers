@@ -8,7 +8,7 @@ class Api::AgendaController < ApplicationController
     pairings = [
                  { id: 1, topic: agenda.topic1, beer: agenda.beer1 },
                  { id: 2, topic: agenda.topic2, beer: agenda.beer2 },
-                 { id: 3, topic: agenda.topic3, beer: agenda.beer3 },
+                 { id: 3, topic: agenda.topic3, beer: agenda.beer3 }
                ]
 
     render json: {
