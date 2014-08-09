@@ -23,4 +23,4 @@ coverage/
 
 database.yml
 
-.env
+#.env
