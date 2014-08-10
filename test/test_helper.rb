@@ -55,4 +55,9 @@ class ActiveSupport::TestCase
   def json(body)
 	  JSON.parse(body, symbolize_names: true)
   end
+
+  def common_assert_refute assert_text, refute_text, compare_text
+    assert_equal assert_text, compare_text
+    refute_equal refute_text, compare_text
+  end
 end
