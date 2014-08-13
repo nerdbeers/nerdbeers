@@ -1,0 +1,1 @@
+json.(@suggestion, :id, :topic, :beer)

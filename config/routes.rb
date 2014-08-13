@@ -26,7 +26,13 @@ Rails.application.routes.draw do
     
     resources :venues, :only =>[:index,:show]
     resources :topic, :only =>[:show]
-
+    resources :suggestions, :only =>[] do
+      collection do
+        get '/'     => :index
+        get  '/all' => :all
+        get '/:id'  => :show
+      end
+    end
   end
 
   root 'home#index'
