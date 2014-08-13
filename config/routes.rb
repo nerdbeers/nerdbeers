@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     get  '/'            => :index, defaults: { viewing: :recent }
     get  '/new'         => :new
     post '/new'         => :create
-    get  '/:all'        => :index, defaults: { viewing: :all }
+    get  '/all'         => :all, defaults: { viewing: :all }
   end
 
   scope path: '/mgmt', controller: :mgmt do
