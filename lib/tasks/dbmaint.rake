@@ -6,3 +6,4 @@ namespace :dbmaint do
     # post to slack when it completes
     Shout.updateteam("vacuum has been completed", 'databot')
   end
+end
