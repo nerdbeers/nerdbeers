@@ -15,7 +15,7 @@ class MgmtController < ApplicationController
     values_to_update = [:topic1, :topic2, :topic3, :beer1, :beer2, :beer3]
      .reduce({}) { |t, i| t.merge(i => params[i]) }
     agenda.update_attributes!(values_to_update)
-    Rails.cache.delete(["recentagenda", agenda.meeting_date])
+    Rails.cache.delete(["last_agenda", agenda.meeting_date])
   #  agenda.update(topic1: params[:topic1], topic2: params[:topic2], topic3: params[:topic3])
   #  Agenda.update(params[:agenda_id], params[:topic1], params[:topic2], params[:topic3], params[:beer1], params[:beer2], params[:beer3])
     redirect_to controller: 'mgmt', action: 'list', status: 303
