@@ -45,7 +45,6 @@ Nerdbeers.Suggestions.setupAutocomplete = function() {
               re = new RegExp(term, "i");
           $.each(data, function(idx, val){
             $.each(val.pairings, function(i, pair){
-              console.log(pair.topic)
               if (re.test(pair.topic)) {
                 list.push({ label: pair.topic + ' : ' + val.meeting_date, value: pair.topic});                 
               }
