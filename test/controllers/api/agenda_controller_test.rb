@@ -34,7 +34,6 @@ class Api::AgendaControllerTest < ActionController::TestCase
     assert payload.length > 0
 
     assert_equal @agenda.id, payload[:id]
-    assert_equal @agenda.meeting_date, payload[:meeting_date]
     assert_equal @venue.venue, payload[:venue_name]
     assert_equal @venue.map_link, payload[:map_link]
     assert_equal 1, payload[:pairings][0][:id]
@@ -48,7 +47,8 @@ class Api::AgendaControllerTest < ActionController::TestCase
     assert_equal 3, payload[:pairings][2][:id]
     assert_equal @agenda.topic3, payload[:pairings][2][:topic]
     assert_equal @agenda.beer3, payload[:pairings][2][:beer]
-    
+    #move the troublesome assert to the end...
+    assert_equal @agenda.meeting_date, payload[:meeting_date]
   end
 
 end
