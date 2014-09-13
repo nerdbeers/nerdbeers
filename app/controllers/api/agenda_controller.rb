@@ -18,14 +18,18 @@ class Api::AgendaController < ApplicationController
   end
 
   def all
-    @agendas = Array.new
+    unsorted = Array.new
     Agenda.get_all.each do |a|
         pairing1 = { :id => 1, :topic => a.topic1, :beer => a.beer1 }
         pairing2 = { :id => 2, :topic => a.topic2, :beer => a.beer2 }
         pairing3 = { :id => 3, :topic => a.topic3, :beer => a.beer3 }
         pairings = pairing1, pairing2, pairing3
 
-        @agendas.push({:id => a.id, :meeting_date => a.meeting_date, :perty_date => a.meeting_date.strftime("%b %d, %Y"), :pairings => pairings, :venue_name => a.venue_name, :map_link => a.map_link})        
+        unsorted.push({:id => a.id, :meeting_date => a.meeting_date, :perty_date => a.meeting_date.strftime("%b %d, %Y"), :pairings => pairings, :venue_name => a.venue_name, :map_link => a.map_link})        
+    end
+
+    @agendas = unsorted.sort_by do |u|
+        u[:meeting_date]
     end
 
     @agendas.reverse!
