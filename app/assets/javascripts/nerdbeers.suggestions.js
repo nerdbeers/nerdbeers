@@ -20,7 +20,7 @@ Nerdbeers.Suggestions.setupAutocomplete = function() {
           $.each(data, function(idx, val){
             $.each(val.pairings, function(i, pair){
               if (re.test(pair.beer)) {
-                list.push({ label: pair.beer + ' : ' + val.meeting_date, value: pair.beer});
+                list.push({ label: pair.beer + ' : ' + val.perty_date, value: pair.beer});
               }
             });
           });
@@ -46,7 +46,7 @@ Nerdbeers.Suggestions.setupAutocomplete = function() {
           $.each(data, function(idx, val){
             $.each(val.pairings, function(i, pair){
               if (re.test(pair.topic)) {
-                list.push({ label: pair.topic + ' : ' + val.meeting_date, value: pair.topic});                 
+                list.push({ label: pair.topic + ' : ' + val.perty_date, value: pair.topic});                 
               }
             });
           });

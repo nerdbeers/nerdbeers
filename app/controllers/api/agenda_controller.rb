@@ -24,11 +24,11 @@ class Api::AgendaController < ApplicationController
         pairing2 = { :id => 2, :topic => a.topic2, :beer => a.beer2 }
         pairing3 = { :id => 3, :topic => a.topic3, :beer => a.beer3 }
         pairings = pairing1, pairing2, pairing3
-        #need to join to venues to get venue_name and map_link
-        @agendas.push({:id => a.id, :meeting_date => a.meeting_date, :pairings => pairings, :venue_name => a.venue_name, :map_link => a.map_link})
-        #@agendas.push({:id => a.id, :meeting_date => a.meeting_date, :pairings => pairings})
+
+        @agendas.push({:id => a.id, :meeting_date => a.meeting_date, :perty_date => a.meeting_date.strftime("%b %d, %Y"), :pairings => pairings, :venue_name => a.venue_name, :map_link => a.map_link})        
     end
 
+    @agendas.reverse!
     render "api/agenda/all", :formats => [:json], :handlers => [:jbuilder], status: 200
   end
 end
