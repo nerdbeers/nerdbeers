@@ -1,4 +1,5 @@
 #= require jquery
+#= require jquery-ui/autocomplete
 #= require handlebars
 #= require ember
 #= require ember-data
