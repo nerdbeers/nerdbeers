@@ -16,6 +16,12 @@ class Agenda < ActiveRecord::Base
     
   end
 
+  def self.get_all
+    Rails.cache.fetch(["all-agendas"], :expires_in => 5.minutes) {
+      Agenda.joins(:venue).select('agendas.*, venues.venue as venue_name, venues.map_link as map_link')
+    }
+  end
+
 =begin  
   def self.update(agenda_id, topic1, topic2, topic3, beer1, beer2, beer3)
     agenda = Agenda.find(agenda_id)

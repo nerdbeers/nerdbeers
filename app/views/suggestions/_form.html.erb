@@ -1,12 +1,12 @@
 <%= form_for :suggestion do |f| %>
   <p>
     <%= f.label :topic %><br>
-    <%= f.text_field :topic %>
+    <%= f.text_field :topic, :class => 'nerdbeers-overflow-topic' %>
   </p>
  
   <p>
     <%= f.label :beer %><br>
-    <%= f.text_field :beer %>
+    <%= f.text_field :beer, :class => 'nerdbeers-overflow-beer' %>
   </p>
  
   <p>
@@ -14,3 +14,8 @@
   </p>
 <% end %>
 
+<script type="text/javascript">  
+  $(document).ready(function() {
+    Nerdbeers.Suggestions.setupAutocomplete();
+  });
+</script>

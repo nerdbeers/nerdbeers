@@ -19,7 +19,8 @@ Rails.application.routes.draw do
 
     resources :agenda, :only =>[] do
       collection do
-        get '/' => :show
+        get '/'    => :show
+        get '/all' => :all
       end
     end
     
