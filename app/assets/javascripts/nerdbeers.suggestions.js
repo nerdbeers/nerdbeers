@@ -34,7 +34,7 @@ Nerdbeers.Suggestions.setupAutocomplete = function() {
 
           if (f5.length == 0){
             var item = f5_suggestions[Math.floor(Math.random()*f5_suggestions.length)];
-            list.splice(0, 0, item);
+            list.splice(0, 0, {label: item, value: 'COOP F5'});
           }
 
           cache_beer[ term ] = list;
