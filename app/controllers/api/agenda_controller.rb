@@ -28,11 +28,9 @@ class Api::AgendaController < ApplicationController
         unsorted.push({:id => a.id, :meeting_date => a.meeting_date, :perty_date => a.meeting_date.strftime("%b %d, %Y"), :pairings => pairings, :venue_name => a.venue_name, :map_link => a.map_link})        
     end
 
-    @agendas = unsorted.sort_by do |u|
-        u[:meeting_date]
-    end
+    # reversing the array is faster than sorting by negative date
+    @agendas = unsorted.sort_by { |u| u[:meeting_date] }.reverse!
 
-    @agendas.reverse!
     render "api/agenda/all", :formats => [:json], :handlers => [:jbuilder], status: 200
   end
 end
