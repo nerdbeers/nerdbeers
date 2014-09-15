@@ -32,6 +32,20 @@ class CanAddNewSuggestionTest < Capybara::Rails::TestCase
     common_save_success
   end
 
+  test "create new suggestion confirm autocomplete suggests F5" do
+    visit '/suggestions/new'
+
+    fill_in 'Beer', :with => 'Any Beer'
+
+    assert_not_nil first('input.nerdbeers-overflow-beer'), 'should be a beer input'
+    #page.has_no_selector('input.nerdbeers-overflow-beer')
+    #assert_not_nil first('input.ui-autocomplete-input'), 'should be an autocomplete input'
+    page.has_selector?('input.ui-autocomplete-input')
+    #assert_not_nil first('ul.ui-autocomplete'), 'should be autocomplete suggestion for F5'
+    page.has_selector?('ul.ui-autocomplete li.ui-menu-item a')
+    skip ('need to figure out how to test autocomplete')
+  end
+
   test "create new suggestion with blank fields fails" do
     visit '/suggestions/new'
     common_save_fails
