@@ -1,4 +1,5 @@
 class Api::SuggestionsController < ApplicationController
+  protect_from_forgery except: :create
 
   def index
     @suggestions = suggestions false
@@ -18,6 +19,24 @@ class Api::SuggestionsController < ApplicationController
   def suggestions allSuggestions
     s = Suggestion.most_recent_first
     allSuggestions == true ? s : s.take(5)
+  end
+
+  def create
+    puts 'API CREATE!'
+    @suggestion = Suggestion.new(suggestion_params)
+    if @suggestion.save
+      @rawr = {:message => "Suggestion saved. :)"}
+      render "api/suggestions/new", :formats => [:json], :handlers => [:jbuilder], status: 201
+    else
+      @rawr = {:message => "Suggestion save failed. :("}
+      render "api/suggestions/new", :formats => [:json], :handlers => [:jbuilder], status: 400
+    end
+  end
+
+  private
+
+  def suggestion_params
+    params.require(:suggestion).permit(:topic, :beer)
   end
 
 end

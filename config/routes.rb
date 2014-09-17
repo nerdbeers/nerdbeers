@@ -32,6 +32,7 @@ Rails.application.routes.draw do
         get '/'     => :index
         get  '/all' => :all
         get '/:id'  => :show
+        post '/new' => :create
       end
     end
   end
