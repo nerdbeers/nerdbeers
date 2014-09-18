@@ -39,10 +39,26 @@ h1, h2, h3, h4, h5, h6 {
 		width: 90%;
 	}
 }
+div.event p {
+	font-size: 2em;
+	margin-bottom: 10px;
+}
+div.event h2 {
+	font-size: 2em;
+	font-weight: bold;
+}
+div.event.mobile p,
+div.event.mobile h2 {
+	font-size: 1em;
+}
+
 .pairings {
 	display: block;
 }
 .field_with_errors {
 	color: red;
 	display: inline-block;
+}
+.navbar-brand, .container {
+	padding-left: 30px;
 }

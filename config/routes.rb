@@ -2,6 +2,11 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
+  scope path: '/', controller: :home do
+    get  '/'            => :index
+    get  '/event'         => :event
+  end
+
   scope path: '/suggestions', controller: :suggestions do
     get  '/'            => :index, defaults: { viewing: :recent }
     get  '/new'         => :new

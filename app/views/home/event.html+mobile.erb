@@ -1,0 +1,63 @@
+<div id="event0" class="event event-full mobile">
+	<h2><%= @agenda.meeting_date.strftime("%B %Y") %> - details</h2><br/>
+
+		<p>
+			<i class="fa fa-wrench fa-lg"></i> <%= @agenda.topic1 %>
+		</p>
+		<p>
+			<i class="fa fa-beer fa-lg"></i>  <%= @agenda.beer1 %>
+		</p>
+		<p>
+			<i class="fa fa-wrench fa-lg"></i> <%= @agenda.topic2 %>
+		</p>
+		<p>
+			<i class="fa fa-beer fa-lg"></i>  <%= @agenda.beer2 %>
+		</p>
+		<p>
+			<i class="fa fa-wrench fa-lg"></i> <%= @agenda.topic3 %>
+		</p>
+		<p>
+			<i class="fa fa-beer fa-lg"></i>  <%= @agenda.beer3 %>
+		</p>
+</div>
+<div id="event1" class="event mobile hide">
+	<h2><%= @agenda.meeting_date.strftime("%B %Y") %> - pairing 1</h2><br/>
+		<p>
+			<i class="fa fa-wrench fa-2x"></i> <%= @agenda.topic1 %>
+		</p>
+		<p>
+			<i class="fa fa-beer fa-2x"></i>  <%= @agenda.beer1 %>
+		</p>
+</div>
+<div id="event2" class="event mobile hide">
+	<h2><%= @agenda.meeting_date.strftime("%B %Y") %> - pairing 2</h2><br/>
+		<p>
+			<i class="fa fa-wrench fa-2x"></i> <%= @agenda.topic2 %>
+		</p>
+		<p>
+			<i class="fa fa-beer fa-2x"></i>  <%= @agenda.beer2 %>
+		</p>
+</div>
+<div id="event3" class="event mobile hide">
+	<h2><%= @agenda.meeting_date.strftime("%B %Y") %> - pairing 3</h2><br/>
+		<p>
+			<i class="fa fa-wrench fa-2x"></i> <%= @agenda.topic3 %>
+		</p>
+		<p>
+			<i class="fa fa-beer fa-2x"></i>  <%= @agenda.beer3 %>
+		</p>
+</div>
+
+<br/>
+<div class="agenda when-where">
+	<b>When:</b> <%= @agenda.meeting_date.strftime("%a, %B %d %I:%M%p") %><br/>
+	<b>Where:</b> <a href='<%= @agenda.map_link %>' ><%= @agenda.venue_name %></a>
+</div>
+
+<input id="variant" type="hidden" value="mobile"/>
+
+<script type="text/javascript"> 
+  $(document).ready(function() {
+    Nerdbeers.EventNight.setup();
+  });
+</script>
