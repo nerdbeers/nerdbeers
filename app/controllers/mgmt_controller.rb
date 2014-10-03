@@ -18,6 +18,7 @@ class MgmtController < ApplicationController
     Rails.cache.delete(["agenda/",agenda.meeting_date])
     Rails.cache.delete("latest_agenda")
 
+    Shout.updateteam("Agenda has been updated by MGMT")
   #  agenda.update(topic1: params[:topic1], topic2: params[:topic2], topic3: params[:topic3])
   #  Agenda.update(params[:agenda_id], params[:topic1], params[:topic2], params[:topic3], params[:beer1], params[:beer2], params[:beer3])
     redirect_to controller: 'mgmt', action: 'list', status: 303
