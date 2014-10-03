@@ -56,8 +56,8 @@ group :development, :test do
   #gem 'turn'
   
   #benchmarking
-  gem 'rails-perftest'
-  gem 'ruby-prof'
+ # gem 'rails-perftest'
+ # gem 'ruby-prof'
 
 end
 
