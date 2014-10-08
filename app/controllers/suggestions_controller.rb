@@ -18,7 +18,11 @@ class SuggestionsController < ApplicationController
 
   def create
     @suggestion = Suggestion.new(suggestion_params)
-    redirect_to controller: 'suggestions', action: 'index', status: 303 if @suggestion.save
+
+    if @suggestion.save
+      Scream.updateteam('suggestions')
+      redirect_to controller: 'suggestions', action: 'index', status: 303
+    end
   end
 
   private
