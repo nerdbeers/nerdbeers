@@ -22,7 +22,7 @@ class Shout
     private
     def self.regularteam
       Slack::Notifier.new "nerdbeers", ENV["SLACK_API"],
-                                  channel: '#general', username: 'slackbot'
+                                  channel: '#general', username: 'Godfather'
     end
 
     #emoji http://www.emoji-cheat-sheet.com/
