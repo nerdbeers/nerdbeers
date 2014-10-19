@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+	<h2><%= @agenda.meeting_date.strftime("%B %Y") %> details</h2><br/>
+
+	<table class="table">
+		<thead>
+			<tr><th>topic</th><th>beer</th></tr>
+		</thead>
+		<tbody>
+			<tr><td><%= @agenda.topic1 %></td><td><%= @agenda.beer1 %></td></tr>
+			<tr><td><%= @agenda.topic2 %></td><td><%= @agenda.beer2 %></td></tr>
+			<tr><td><%= @agenda.topic3 %></td><td><%= @agenda.beer3 %></td></tr>
+		</tbody>
+	</table>
+	<br/>
+	<p>
+		<b>When:</b> <%= @agenda.meeting_date.strftime("%a, %B %d %I:%M%p") %><br/>
+		<b>Where:</b> <a href='<%= @agenda.map_link %>' ><%= @agenda.venue_name %></a>
+	</p>
+  </body>
+</html>

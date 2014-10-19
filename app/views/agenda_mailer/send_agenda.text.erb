@@ -1,0 +1,9 @@
+<%= @agenda.meeting_date.strftime("%B %Y") %> details
+===================================
+<%= @agenda.topic1 %>    <%= @agenda.beer1 %>
+<%= @agenda.topic2 %>    <%= @agenda.beer2 %>
+<%= @agenda.topic3 %>    <%= @agenda.beer3 %>
+
+When:  <%= @agenda.meeting_date.strftime("%a, %B %d %I:%M%p") %>
+
+Where: <%= @agenda.venue_name %>
