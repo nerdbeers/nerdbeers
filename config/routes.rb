@@ -21,7 +21,8 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-
+    get '/' => "agenda#show"
+    
     resources :agenda, :only =>[] do
       collection do
         get '/'    => :show
