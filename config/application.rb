@@ -6,6 +6,11 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
+# Allow NewRelic to pull memory/garbage collection stats
+# confirm it works with GC::Profiler.enabled? in console
+GC::Profiler.enable
+
 module Nerdbeers
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -20,9 +25,9 @@ module Nerdbeers
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.exceptions_app = self.routes
-    
+
     config.active_record.schema_format = :sql
-    
+
     config.generators do |g|
       g.orm             :active_record
       g.test_framework  :minitest, fixture: true
@@ -31,6 +36,6 @@ module Nerdbeers
       g.javascripts false
       g.stylesheets false
     end
-    
+
   end
 end
