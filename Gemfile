@@ -58,8 +58,8 @@ group :development, :test do
   #benchmarking
  # gem 'rails-perftest'
  # gem 'ruby-prof'
-
 end
+gem "codeclimate-test-reporter", group: :test, require: nil
 
 group :production do
   gem 'rails_12factor'

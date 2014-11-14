@@ -5,6 +5,8 @@ require "minitest/rails"
 require "minitest/rails/capybara"
 require "minitest/reporters"
 
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
 
 module Minitest
   module Reporters
