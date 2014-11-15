@@ -1,4 +1,3 @@
-; // jshint ignore:line
 Nerdbeers = window.Nerdbeers || {};
 Nerdbeers.EventNight = {};
 
