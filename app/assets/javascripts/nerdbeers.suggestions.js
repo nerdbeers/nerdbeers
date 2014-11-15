@@ -1,10 +1,10 @@
-;
+; // jshint ignore:line
 Nerdbeers = window.Nerdbeers || {};
 Nerdbeers.Suggestions = {};
 
 Nerdbeers.Suggestions.setupAutocomplete = function() {
     var cache_beer = {},
-    	  cache_topic = {},
+        cache_topic = {},
         f5_suggestions = ['Have you considered Coop F5?', 'May I suggest Coop F5?', 'Many nerds like a tasty IPA like COOP F5.'];
 
     $( ".nerdbeers-overflow-beer" ).autocomplete({
@@ -32,7 +32,7 @@ Nerdbeers.Suggestions.setupAutocomplete = function() {
               return reF5.test(val.label);
           });
 
-          if (f5.length == 0){
+          if (f5.length === 0){
             var item = f5_suggestions[Math.floor(Math.random()*f5_suggestions.length)];
             list.splice(0, 0, {label: item, value: 'COOP F5'});
           }
@@ -68,4 +68,4 @@ Nerdbeers.Suggestions.setupAutocomplete = function() {
         });
       }
     });
-}
+};

@@ -1,4 +1,4 @@
-;
+; // jshint ignore:line
 Nerdbeers = window.Nerdbeers || {};
 Nerdbeers.EventNight = {};
 
@@ -9,7 +9,7 @@ Nerdbeers.EventNight.setup = function() {
 		$('#event' + id).addClass('hide');
 		id++;
 		id = id > 3 ? 0 : id;
-		nextId = id == 3 ? 0 : (id + 1);
+		nextId = id === 3 ? 0 : (id + 1);
 	};
 	setInterval(hide, 30000);
-}
+};
