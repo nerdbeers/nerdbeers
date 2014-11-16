@@ -40,12 +40,3 @@ getting started
 
 ## Behold! The wonderous beauty of the nerdbeers rails-edition
 Open your web browser and visit http://localhost:3000/
-
-
-## Front end Part
-> Currently using  bootstrap
-> Turbo links has been removed
-> Emberjs has been added but not wired up.
-
-## Testing Ember Part
-> we're going to need the  phantomjs gem and  teaspoon gem. framework will be qunit
