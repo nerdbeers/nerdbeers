@@ -1,24 +1,23 @@
+Venue.create("venue"=>"Republic Gastropub on Classen Curve", "map_link"=>"http://goo.gl/maps/1ktTV")
+Venue.create("venue"=>"James E. McNellies Public House", "map_link"=>"https://www.google.com/maps/place/James+E.+McNellies+Public+House/@35.479277,-97.521327,17z/data=!3m1!4b1!4m2!3m1!1s0x87b217347cf573e5:0xfc8b711954da4e4")
+Venue.create("venue"=>"TapWerks Ale House", "map_link"=>"https://www.google.com/maps/place/TapWerks+Ale+House+%26+Cafe/@35.466577,-97.5096,17z/data=!3m1!4b1!4m2!3m1!1s0x0:0x8162386058d68e8a?hl=en")
+Venue.create("venue"=>"Redpin Bowling Lounge", "map_link"=>"https://www.google.com/maps/place/RedPin+Bowling+Lounge/@35.463632,-97.509842,17z/data=!3m1!4b1!4m2!3m1!1s0x87b2172770ffab75:0x68464e5fb0c7350e?hl=en")
 
-venue = Venue.create({ venue: 'Republic Gastropub on Classen Curve', map_link: 'http://goo.gl/maps/1ktTV'})
-venue = Venue.create({ venue: 'James E. McNellies Public House' , map_link: 'https://www.google.com/maps/place/James+E.+McNellie''s+Public+House/@35.479277,-97.521327,17z/data=!3m1!4b1!4m2!3m1!1s0x87b217347cf573e5:0xfc8b711954da4e4'})
-venue = Venue.create({ venue: 'TapWerks Ale House', map_link: 'https://www.google.com/maps/place/TapWerks+Ale+House+%26+Cafe/@35.466577,-97.5096,17z/data=!3m1!4b1!4m2!3m1!1s0x0:0x8162386058d68e8a?hl=en'})
-venue = Venue.create({ venue: 'Redpin Bowling Lounge', map_link: 'https://www.google.com/maps/place/RedPin+Bowling+Lounge/@35.463632,-97.509842,17z/data=!3m1!4b1!4m2!3m1!1s0x87b2172770ffab75:0x68464e5fb0c7350e?hl=en'})
+Agenda.create("meeting_date"=>Thu, 22 May 2014 17:30:00 UTC +00:00, "venue_id"=>1, "details"=>"beer1"=>"f5", "beer2"=>"zatec", "beer3"=>"native", "topic1"=>"love", "topic2"=>"happy", "topic3"=>"fun")
+Agenda.create("meeting_date"=>Thu, 18 Jul 2013 17:30:00 UTC +00:00, "venue_id"=>1, "details"=>"beer1"=>"Full Sail Session Black", "beer2"=>"Black Mesa Blonde", "beer3"=>"Rogue Dead Guy", "topic1"=>"Project auto scaffolding", "topic2"=>"Best Chat Client/Protocol", "topic3"=>"Microsoft Ending Technet")
+Agenda.create("meeting_date"=>Thu, 22 Aug 2013 17:30:00 UTC +00:00, "venue_id"=>2, "details"=>"beer1"=>"Green Flash Hop Head Red", "beer2"=>"Left Hand Sawtooth", "beer3"=>"Zatec Dark", "topic1"=>"Yeoman", "topic2"=>"Mobile App vs Mobile Web", "topic3"=>"avorite Dev Setup (Hardware/Software)")
+Agenda.create("meeting_date"=>Thu, 19 Sep 2013 17:30:00 UTC +00:00, "venue_id"=>2, "details"=>"beer1"=>"Carlsberg Pilsner", "beer2"=>"Black Sheep- Monty Python Holy Grail", "beer3"=>"North Coast - Prankster", "topic1"=>"Postgres 9.3", "topic2"=>"Plastic iPhones", "topic3"=>"Project Visualization")
+Agenda.create("meeting_date"=>Fri, 18 Oct 2013 17:30:00 UTC +00:00, "venue_id"=>2, "details"=>"beer1"=>"North Coast - Red Seal Ale", "beer2"=>"Ommegang -Three Philosophers", "beer3"=>"Santa Fe - Happy Camper IPA", "topic1"=>"Ubuntu 13.10 * Windows 8.1", "topic2"=>"Proliferation of Cordova", "topic3"=>"Application Security")
+Agenda.create("meeting_date"=>Thu, 21 Nov 2013 17:30:00 UTC +00:00, "venue_id"=>1, "details"=>"beer1"=>"Green Flash Hop Head Red", "beer2"=>"Shiner Wild Hare", "beer3"=>"Coop Gransport Porter", "topic1"=>"Go-lang", "topic2"=>"RabbitMq", "topic3"=>"Thunder Plains")
+Agenda.create("meeting_date"=>Thu, 19 Dec 2013 17:30:00 UTC +00:00, "venue_id"=>2, "details"=>"beer1"=>"Big Sky - Trout Slayer", "beer2"=>"Black Mesa - Blonde", "beer3"=>"Anchor Steam", "topic1"=>"Cloud IDEs", "topic2"=>"Arduino Projects", "topic3"=>"D3 Tricks")
+Agenda.create("meeting_date"=>Thu, 16 Jan 2014 17:30:00 UTC +00:00, "venue_id"=>3, "details"=>"beer1"=>"", "beer2"=>"", "beer3"=>"", "topic1"=>"", "topic2"=>"", "topic3"=>"")
+Agenda.create("meeting_date"=>Thu, 20 Feb 2014 17:30:00 UTC +00:00, "venue_id"=>2, "details"=>"beer1"=>"Narwhal", "beer2"=>"Java Stout", "beer3"=>"Avery ipa", "topic1"=>"Docker", "topic2"=>"Growth of Coffeescript", "topic3"=>"What makes a good API")
+Agenda.create("meeting_date"=>Wed, 19 Mar 2014 17:30:00 UTC +00:00, "venue_id"=>4, "details"=>"beer1"=>"Coop - F5", "beer2"=>"Coop - Native Robs", "beer3"=>"Bridgeport IPA", "topic1"=>"ElasticSearch", "topic2"=>"Side Robs", "topic3"=>"Atom")
+Agenda.create("meeting_date"=>Thu, 17 Apr 2014 17:30:00 UTC +00:00, "venue_id"=>4, "details"=>"beer1"=>"Coop - F5", "beer2"=>"GreenFlash Hop Head Red", "beer3"=>"Coop - Native Amber", "topic1"=>"Microsoft/Nasa OSS", "topic2"=>"Heartbleed", "topic3"=>"Ubuntu 14.04/Windows XP")
+Agenda.create("meeting_date"=>Thu, 22 May 2014 17:30:00 UTC +00:00, "venue_id"=>4, "details"=>"beer1"=>"Avery - Ellies Brown Ale", "beer2"=>"Avery - Out of Bounds Stout", "beer3"=>"Coop F5", "topic1"=>"canary.io", "topic2"=>"Death of BDD", "topic3"=>"KcDc")
+Agenda.create("meeting_date"=>Thu, 19 Jun 2014 18:30:00 UTC +00:00, "venue_id"=>4, "details"=>"beer1"=>"Avery - Ellies Brown Ale", "beer2"=>"Avery - Out of Bounds Stout", "beer3"=>"Coop F5", "topic1"=>"raspberry pi projects", "topic2"=>"vagrant+ansible dev machines", "topic3"=>"unified logging solutions")
+Agenda.create("meeting_date"=>Thu, 17 Jul 2014 17:00:00 UTC +00:00, "venue_id"=>4, "details"=>"beer1"=>"coors light", "beer2"=>"TBD", "beer3"=>"TBD", "topic1"=>"TBD", "topic2"=>"chat apps", "topic3"=>"things and stuff")
 
-#2013
-agenda = Agenda.create("2013-07-18 17:30:00", 1, "Project auto scaffolding", "Best Chat Client/Protocol", "Microsoft Ending Technet", "Full Sail Session Black", "Black Mesa Blonde", "Rogue Dead Guy")
-agenda = Agenda.create("2013-08-22 17:30:00", 2, "Yeoman", "Mobile App vs Mobile Web", "Favorite Dev Setup (Hardware/Software)", "Green Flash Hop Head Red", "Left Hand Sawtooth", "Zatec Dark")
-agenda = Agenda.create("2013-09-19 17:30:00", 2, "Postgres 9.3", "Plastic iPhones", "Project Visualization", "Carlsberg Pilsner", "Black Sheep- Monty Python Holy Grail", "North Coast - Prankster")
-agenda = Agenda.create("2013-10-18 17:30:00", 2, "Ubuntu 13.10 * Windows 8.1", "Proliferation of Cordova", "Application Security", "North Coast - Red Seal Ale", "Ommegang -Three Philosophers", "Santa Fe - Happy Camper IPA")
-agenda = Agenda.create("2013-11-21 17:30:00", 1, "Go-lang", "RabbitMq", "Thunder Plains", "Green Flash Hop Head Red", "Shiner Wild Hare", "Coop Gransport Porter")
-agenda = Agenda.create("2013-12-19 17:30:00", 2, "Cloud IDEs", "Arduino Projects", "D3 Tricks", "Big Sky - Trout Slayer", "Black Mesa - Blonde", "Anchor Steam")
-
-#2014
-agenda = Agenda.create("2014-01-16 17:30:00", 3, "", "", "", "", "", "")
-agenda = Agenda.create("2014-02-20 17:30:00", 2, "Docker", "Growth of Coffeescript", "What makes a good API", "Narwhal", "Java Stout", "Avery ipa")
-agenda = Agenda.create("2014-03-19 17:30:00", 4, "ElasticSearch", "Side Projects", "Atom", "Coop - F5", "Coop - Native Amber", "Bridgeport IPA")
-agenda = Agenda.create("2014-04-17 17:30:00", 4, "Microsoft/Nasa OSS", "Heartbleed", "Ubuntu 14.04/Windows XP", "Coop - F5", "GreenFlash Hop Head Red", "Coop - Native Amber")
-agenda = Agenda.create("2014-05-22 17:30:00", 4, "canary.io", "Death of TDD", "KcDc", "Avery - Ellies Brown Ale", "Avery - Out of Bounds Stout", "Coop F5")
-agenda = Agenda.create("2014-06-19 17:30:00", 4, "raspberry pi projects", "vagrant+ansible dev machines", "unified logging solutions", "TBD", "TBD", "TBD")
 
 
 suggestion = Suggestion.create("The \"Rails Way\"", "Anchor Steam")
