@@ -22,17 +22,15 @@ Rails.application.routes.draw do
 
   namespace :api do
     get '/' => "agenda#show"
-    
+
     resources :agenda, :only =>[] do
       collection do
         get '/'    => :show
         get '/all' => :all
       end
     end
-    
-    
+
     resources :venues, :only =>[:index,:show]
-    resources :topic, :only =>[:show]
     resources :suggestions, :only =>[] do
       collection do
         get '/'     => :index
