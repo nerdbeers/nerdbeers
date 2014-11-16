@@ -1,4 +1,4 @@
-[![Code Climate](https://codeclimate.com/github/nerdbeers/nerdbeers/badges/gpa.svg)](https://codeclimate.com/github/nerdbeers/nerdbeers) [![Test Coverage](https://codeclimate.com/github/nerdbeers/nerdbeers/badges/coverage.svg)](https://codeclimate.com/github/nerdbeers/nerdbeers)
+[![Code Climate](https://codeclimate.com/github/nerdbeers/nerdbeers/badges/gpa.svg)](https://codeclimate.com/github/nerdbeers/nerdbeers) [![Test Coverage](https://codeclimate.com/github/nerdbeers/nerdbeers/badges/coverage.svg)](https://codeclimate.com/github/nerdbeers/nerdbeers) [ ![Codeship Status for nerdbeers/nerdbeers](https://codeship.com/projects/64503e30-b1e5-0131-0260-0eab129fca73/status?branch=master)](https://codeship.com/projects/20007)
 nerdbeers
 =========
 
