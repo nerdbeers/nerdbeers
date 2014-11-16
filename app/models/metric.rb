@@ -4,7 +4,7 @@ class Metric < ActiveRecord::Base
     Metric.create(variant: variant.to_s, user_agent: user_agent)
   end
 
-  def self. get_metrics
+  def self.get_metrics
     p 'hey metrics'
   end
 
