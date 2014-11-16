@@ -1,3 +1,6 @@
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
+
 ENV["RAILS_ENV"] = "test"
 require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
@@ -5,8 +8,6 @@ require "minitest/rails"
 require "minitest/rails/capybara"
 require "minitest/reporters"
 
-require "codeclimate-test-reporter"
-CodeClimate::TestReporter.start
 
 module Minitest
   module Reporters
