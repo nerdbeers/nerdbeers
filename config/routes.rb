@@ -14,10 +14,10 @@ Rails.application.routes.draw do
     get  '/all'         => :all, defaults: { viewing: :all }
   end
 
-  scope path: '/mgmt', controller: :mgmt do
-    get  '/'            => :list
-    get  '/detail/:id'  => :detail
-    post 'updateagenda' => :updateagenda
+  namespace :mgmt do
+    get '/' => "dashboard#index"
+
+    resources :dashboard, :only => [:index]
   end
 
   namespace :api do
