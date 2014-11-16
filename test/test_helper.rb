@@ -63,4 +63,13 @@ class ActiveSupport::TestCase
     assert_equal assert_text, compare_text
     refute_equal refute_text, compare_text
   end
+
+  def updateAgendaDetails agenda
+    agenda.topic1 = "Topic Uno"
+    agenda.topic2 = "Topic Dos"
+    agenda.topic3 = "Topic Tres"
+    agenda.beer1  = "beer one"
+    agenda.beer2  = "beer two"
+    agenda.beer3  = "beer three"
+  end
 end
