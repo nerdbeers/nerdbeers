@@ -38,27 +38,25 @@ class SuggestionTest < ActiveSupport::TestCase
     assert s.save, "should save when both topic and beer are provided"
   end
 
-  def test_suggestion_validator_with_invalid_suggestion
-    s = Suggestion.new
-    v = SuggestionValidator.new
-    v.validate(s)
-
-    assert_equal false, s.topic?, "should not have a topic"
-    assert_equal false, s.beer?,  "should not have a beer"
-    assert s.errors.has_key?(:topic), "errors hash should have key 'topic'"
-    assert s.errors.has_key?(:beer),  "errors hash should have key 'beer'"
+  def test_suggestion_create_valid_when_both_topic_and_beer_provided
+    s = Suggestion.create("any topic", "any beer")
+    assert s, "should be created when both topic and beer are provided"
   end
 
-  def test_suggestion_validator_with_valid_suggestion
-    s = Suggestion.new
-    s.topic = "any topic"
-    s.beer  = "any beer"
-    v = SuggestionValidator.new
-    v.validate(s)
-
-    assert s.topic?, "should have a topic"
-    assert s.beer?,  "should have a beer"
-    assert_equal false, s.errors.has_key?(:topic), "errors hash should not have key 'topic'"
-    assert_equal false, s.errors.has_key?(:beer),  "errors hash should not have key 'beer'"
+  def test_suggestion_create_valid_when_topic_provided
+    s = Suggestion.create("any topic", nil)
+    assert s, "should be created when only topic provided"
   end
+
+  def test_suggestion_create_valid_when_beer_provided
+    s = Suggestion.create(nil, "any beer")
+    assert s, "should be valid when only beer provided"
+  end
+
+  def test_suggestion_create_not_valid_when_nil_topic_and_nil_beer
+    assert_raise ActiveRecord::RecordInvalid do
+        Suggestion.create(nil, nil)
+    end    
+  end
+
 end
