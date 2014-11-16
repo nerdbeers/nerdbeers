@@ -1,3 +1,4 @@
+[![Code Climate](https://codeclimate.com/github/nerdbeers/nerdbeers/badges/gpa.svg)](https://codeclimate.com/github/nerdbeers/nerdbeers) [![Test Coverage](https://codeclimate.com/github/nerdbeers/nerdbeers/badges/coverage.svg)](https://codeclimate.com/github/nerdbeers/nerdbeers)
 nerdbeers
 =========
 
@@ -47,4 +48,4 @@ Open your web browser and visit http://localhost:3000/
 > Emberjs has been added but not wired up.
 
 ## Testing Ember Part
-> we're going to need the  phantomjs gem and  teaspoon gem. framework will be qunit 
+> we're going to need the  phantomjs gem and  teaspoon gem. framework will be qunit
