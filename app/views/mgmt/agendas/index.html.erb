@@ -1,0 +1,41 @@
+Number of Meetings: <%= @agendas.size %>
+<table class="table table-striped table-condensed">
+  <tr>
+    <th>
+      Meeting Date
+    </th>
+    <th>
+      Venue
+    </th>
+    <th>
+      Topics
+    </th>
+    <th>
+      Beers
+    </th>
+    <th>
+      Actions
+    </th>
+  </tr>
+	<% @agendas.each do |a|%>
+	<tr>
+      <td><%= a.meeting_date.strftime("%m/%d/%y") %></td>
+      <td><%= a.venue_name %></td>
+      <td>
+        <ol>
+          <li><%= a.topic1 %></li>
+          <li><%= a.topic2 %></li>
+          <li><%= a.topic3 %></li>
+        </ol>
+      </td>
+      <td>
+        <ol>
+          <li><%= a.beer1 %></li>
+          <li><%= a.beer2 %></li>
+          <li><%= a.beer3 %></li>
+        </ol>
+      </td>
+      <td><a href="/mgmt/agendas/<%= a.id %>">Details</a> | <a href="/mgmt/agendas/<%= a.id %>/edit">Edit</a></td>
+	<% end %>
+</table>
+<hr/>

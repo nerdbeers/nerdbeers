@@ -1,0 +1,84 @@
+<%= form_for [:mgmt, @agenda] do |f| %>
+    <% if @agenda.errors.any? %>
+        <div class="alert alert-danger" role="alert">
+          <h4><%= pluralize(@agenda.errors.count, "error") %> prohibited this agenda from being saved:</h4>
+
+          <ul>
+            <% @agenda.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :meeting_date %>
+          <%= f.date_field :meeting_date, :class => 'form-control' %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :venue %>
+          <%= f.collection_select :venue_id, Venue.all, :id, :venue, {:prompt => 'Select a venue...'}, {:class => 'form-control'} %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :topic1 %>
+          <%= f.text_field :topic1, :class => 'form-control' %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :beer1 %>
+          <%= f.text_field :beer1, :class => 'form-control' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :topic2 %>
+          <%= f.text_field :topic2, :class => 'form-control' %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :beer2 %>
+          <%= f.text_field :beer2, :class => 'form-control' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :topic3 %>
+          <%= f.text_field :topic3, :class => 'form-control' %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :beer3 %>
+          <%= f.text_field :beer3, :class => 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+          <%= f.submit :class => 'btn btn-primary pull-right' %>
+          <div class="clearfix"></div>
+        </div>
+    </div>
+<% end %>
+
+<script>
+    //This is a stupid jquery hack to apply the Bootstrap error state to a field with an error
+    $('.field_with_errors').parent().addClass('has-error');
+</script>

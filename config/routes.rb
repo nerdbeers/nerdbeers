@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     get '/' => "dashboard#index"
 
     resources :dashboard, :only => [:index]
+
+    resources :agendas
   end
 
   namespace :api do

@@ -57,7 +57,10 @@ div.event.mobile h2 {
 }
 .field_with_errors {
 	color: red;
-	display: inline-block;
+}
+.field_with_errors > label:after {
+    content: 'Fix Me!';
+    color: red;
 }
 .navbar-brand, .container {
 	padding-left: 30px;
