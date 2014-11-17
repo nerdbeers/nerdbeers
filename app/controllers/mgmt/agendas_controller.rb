@@ -28,7 +28,7 @@ class Mgmt::AgendasController < Mgmt::MgmtController
 
   def update
     if @agenda.update(agenda_params)
-      redirect_to [:mgmt, @agenda], notice: 'Agenda was successfully updated.'
+      redirect_to [:mgmt, @agenda], notice: 'Agenda was successfully updated.', status: 303
     else
       render :edit
     end
