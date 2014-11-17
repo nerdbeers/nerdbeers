@@ -20,7 +20,7 @@ class Mgmt::AgendasController < Mgmt::MgmtController
     @agenda = Agenda.new(agenda_params)
 
     if @agenda.save
-      redirect_to [:mgmt, @agenda], notice: 'Agenda was successfully created.'
+      redirect_to [:mgmt, @agenda], notice: 'Agenda was successfully created.', status: 201
     else
       render :new
     end
@@ -36,7 +36,7 @@ class Mgmt::AgendasController < Mgmt::MgmtController
 
   def destroy
     @agenda.destroy
-    redirect_to agendas_url, notice: 'Agenda was successfully destroyed.'
+    redirect_to mgmt_agendas_url, notice: 'Agenda was successfully destroyed.', status: 303
   end
 
   private
