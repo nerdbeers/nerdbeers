@@ -9,7 +9,7 @@ getting started
 
 ## The rails part
 ```
-> git clone https://github.com/datachomp/nerdbeers.git
+> git clone https://github.com/nerdbeers/nerdbeers.git
 > cd nerdbeers
 > bundle install
 ```
