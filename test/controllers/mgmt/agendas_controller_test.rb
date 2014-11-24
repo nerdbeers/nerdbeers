@@ -21,7 +21,7 @@ class Mgmt::AgendasControllerTest < ActionController::TestCase
 
   end
 
-  test "should get orders details" do
+  test "should get agenda details" do
     @request.env['HTTP_AUTHORIZATION'] = 'Basic ' + Base64.encode64(@user + ':' + @password )
     params = {id: @agenda.id }
     get :show, params
@@ -66,7 +66,7 @@ class Mgmt::AgendasControllerTest < ActionController::TestCase
     assert a.beer2  == "beer dos", "Beer2 should match"
     assert a.beer3  == "beer tres", "Beer3 should match"
     assert a.meeting_date  == date, "meeting_date should match"
-    assert a.venue_id  == venue_id, "meeting_date should match"
+    assert a.venue_id  == venue_id, "venue_id should match"
   end
 
   test "should create, then delete an agenda successfully" do

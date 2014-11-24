@@ -1,0 +1,32 @@
+
+<div class="page-header">
+    <h1>Venue Details <a href="/mgmt/venues/<%= @venue.id %>/edit" class="btn btn-xs btn-primary">edit</a></h1>
+</div>
+ 
+<div class="row">
+  <div class="col-md-6">
+    <p>
+      <b>Venue</b><br/>
+      <%= @venue.venue %>
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <p>
+      <b>Map Link</b><br/>
+      <a href="<%= @venue.map_link %>">Map Link</a>
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <p>
+      <b>Map Link Text</b><br/>
+     <div><%= @venue.map_link %></div>
+    </p>
+  </div>
+</div>
+
+<hr />
+<a href="/mgmt/venues/" class="btn btn-xs btn-info">back</a>

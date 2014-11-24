@@ -1,0 +1,49 @@
+<%= form_for [:mgmt, @venue] do |f| %>
+    <% if @venue.errors.any? %>
+        <div class="alert alert-danger" role="alert">
+          <h4><%= pluralize(@venue.errors.count, "error") %> prohibited this venue from being saved:</h4>
+
+          <ul>
+            <% @venue.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :venue %>
+          <%= f.text_field :venue, :class => 'form-control' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :map_link %>
+          <%= f.text_field :map_link, :class => 'form-control' %>
+
+          <a href="https://maps.google.com/" class="btn btn-xs">Google Maps</a>
+          <a id="test-link" href="https://maps.google.com/" class="btn btn-xs">Test Link</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+          <%= f.submit :class => 'btn btn-primary pull-right' %>
+          <div class="clearfix"></div>
+        </div>
+    </div>
+<% end %>
+
+<script>
+    //This is a stupid jquery hack to apply the Bootstrap error state to a field with an error
+    $('.field_with_errors').parent().addClass('has-error');
+    $('#test-link').click(function(){
+       //grab the link in the map link control and open in a new window 
+
+    });
+</script>

@@ -1,0 +1,24 @@
+<h1>Number of Venues: <%= @venues.size %> <a href="/mgmt/venues/new" class="btn btn-xs btn-primary">New Venue</a></h1>
+<table class="table table-striped table-condensed">
+  <tr>
+    <th>
+      Venue
+    </th>
+    <th>
+      Map Link
+    </th>
+    <th>
+    </th>
+    <th>Actions
+    </th>
+  </tr>
+	<% @venues.each do |v|%>
+	<tr>
+      <td><%= v.venue %></td>
+      <td><a href="<%= v.map_link %>">Map</a></td>
+      <td>
+      </td>
+      <td><a href="/mgmt/venues/<%= v.id %>">Details</a>&nbsp;|&nbsp;<a href="/mgmt/venues/<%= v.id %>/edit">Edit</a></td>
+	<% end %>
+</table>
+<hr/>

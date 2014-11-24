@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>NerdBeers</title>
+  <title>NerdBeers - Mgmt</title>
   <meta name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=2.0'>
   <link rel="author" href="humans.txt" />
 
@@ -27,6 +27,9 @@
 	  <ul class="nav navbar-nav">
 	    <li><a href="/mgmt/agendas">Agendas</a></li>
 	  </ul>
+	  <ul class="nav navbar-nav">
+	    <li><a href="/mgmt/venues">Venues</a></li>
+	  </ul>
 	</div>
 </div>
 
@@ -36,10 +39,6 @@
 <br/>
 <div id="footer">
       <div class="container">
-      	<% if @agenda.present? %>
-		<p id="suggestion-footer"><b>NerdBeers</b> belongs to you. <a href="/suggestion">What do you want to talk about next time?</a>
-		</p><br/>
-		<% end %>
 		<p class="text-muted">Powered by Ember. Engined by Http. Data-ed by Json. Coded by Humans. Loved by All.</p>
       </div>
     </div>

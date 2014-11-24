@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :dashboard, :only => [:index]
 
     resources :agendas
+    resources :venues
   end
 
   namespace :api do

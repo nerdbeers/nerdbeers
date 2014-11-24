@@ -1,4 +1,4 @@
-Number of Meetings: <%= @agendas.size %>
+<h1>Number of Meetings: <%= @agendas.size %> <a href="/mgmt/agendas/new" class="btn btn-xs btn-primary">New Agenda</a></h1>
 <table class="table table-striped table-condensed">
   <tr>
     <th>
@@ -13,8 +13,7 @@ Number of Meetings: <%= @agendas.size %>
     <th>
       Beers
     </th>
-    <th>
-      Actions
+    <th>Actions
     </th>
   </tr>
 	<% @agendas.each do |a|%>
@@ -35,7 +34,8 @@ Number of Meetings: <%= @agendas.size %>
           <li><%= a.beer3 %></li>
         </ol>
       </td>
-      <td><a href="/mgmt/agendas/<%= a.id %>">Details</a> | <a href="/mgmt/agendas/<%= a.id %>/edit">Edit</a></td>
+      <td><a href="/mgmt/agendas/<%= a.id %>">Details</a>&nbsp;|&nbsp;<a href="/mgmt/agendas/<%= a.id %>/edit">Edit</a>
+      </td>
 	<% end %>
 </table>
 <hr/>

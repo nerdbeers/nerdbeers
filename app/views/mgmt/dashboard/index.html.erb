@@ -1,9 +1,21 @@
-Number of Meetings: <%= @agendas.size %>
-<hr/>
-<table>
+<div class="row">
+  <div class="col-md-4">
+
+<h1>Agendas (<%= @agendas.size %>) <a href="/mgmt/agendas/new" class="btn btn-xs btn-primary">New Agenda</a></h1>
+<table class="table">
 	<% @agendas.each do |a|%>
 	<tr><td><%= a.meeting_date.strftime("%m/%d/%y") %> </td><td><%= a.topic1 %></td>
-		<td><a href="/mgmt/detail/<%= a.id %>">Details</a></td>
+		<td><a href="/mgmt/agendas/<%= a.id %>">Details</a></td>
 	<% end %>
 </table>
+	</div>
+  <div class="col-md-4">
+<h1>Venues (<%= @venues.size %>) <a href="/mgmt/venues/new" class="btn btn-xs btn-primary">New Venue</a></h1>
+<table class="table">
+	<% @venues.each do |v|%>
+	<tr><td><%= v.venue %> </td><td><a href="/mgmt/venues/<%= v.id %>">Details</a></td>
+	<% end %>
+</table>
+	</div>
+</div>
 <hr/>
