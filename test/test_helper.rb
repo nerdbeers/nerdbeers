@@ -72,4 +72,21 @@ class ActiveSupport::TestCase
     agenda.beer2  = "beer two"
     agenda.beer3  = "beer three"
   end
+
+  def login
+    basic_auth ENV["MGMT_LOGIN"], ENV["MGMT_PASSWORD"]
+  end
+  #http://theadmin.org/articles/test-http-basic-authentication-in-rails/
+  def basic_auth(name, password)
+    if page.driver.respond_to?(:basic_auth)
+      page.driver.basic_auth(name, password)
+    elsif page.driver.respond_to?(:basic_authorize)
+      page.driver.basic_authorize(name, password)
+    elsif page.driver.respond_to?(:browser) && page.driver.browser.respond_to?(:basic_authorize)
+      page.driver.browser.basic_authorize(name, password)
+    else
+      raise "I don't know how to log in!"
+    end
+  end
+
 end
