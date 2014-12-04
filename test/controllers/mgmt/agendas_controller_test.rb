@@ -51,7 +51,7 @@ class Mgmt::AgendasControllerTest < ActionController::TestCase
     @request.env['HTTP_AUTHORIZATION'] = 'Basic ' + Base64.encode64(@user + ':' + @password )
     params = {agenda: { topic1: 'Topic Uno', topic2: 'Topic Dos', topic3: 'Topic Tres', beer1: 'beer uno', beer2: 'beer dos', beer3: 'beer tres', meeting_date: date, venue_id: venue_id  }}
     post "create", params
-    assert_response 201
+    assert_response 303
     
     after = Agenda.count()
     assert after != before, "Number of agendas should increase"
@@ -77,7 +77,7 @@ class Mgmt::AgendasControllerTest < ActionController::TestCase
     @request.env['HTTP_AUTHORIZATION'] = 'Basic ' + Base64.encode64(@user + ':' + @password )
     params = {agenda: { topic1: 'Topic Uno', topic2: 'Topic Dos', topic3: 'Topic Tres', beer1: 'beer uno', beer2: 'beer dos', beer3: 'beer tres', meeting_date: date, venue_id: venue_id  }}
     post "create", params
-    assert_response 201
+    assert_response 303
 
     a = Agenda.last()
     puts "id: #{a.id}"    

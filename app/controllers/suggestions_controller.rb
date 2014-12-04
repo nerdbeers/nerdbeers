@@ -21,7 +21,7 @@ class SuggestionsController < ApplicationController
 
     if @suggestion.save
       Scream.updateteam('suggestions')
-      redirect_to controller: 'suggestions', action: 'index', status: 303
+      redirect_to controller: 'suggestions', action: 'index', notice: 'Suggestion was successfully created.', status: 303
     end
   end
 

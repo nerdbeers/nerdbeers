@@ -48,7 +48,7 @@ class Mgmt::VenuesControllerTest < ActionController::TestCase
     @request.env['HTTP_AUTHORIZATION'] = 'Basic ' + Base64.encode64(@user + ':' + @password )
     params = {venue: { venue: "Venue Uno", map_link: "http://nerdbeers.venueuno.com/" }}
     post "create", params
-    assert_response 201
+    assert_response 303
     
     after = Venue.count()
     assert after != before, "Number of venues should increase"
@@ -66,7 +66,7 @@ class Mgmt::VenuesControllerTest < ActionController::TestCase
     @request.env['HTTP_AUTHORIZATION'] = 'Basic ' + Base64.encode64(@user + ':' + @password )
     params = {venue: { venue: "Venue Uno", map_link: "http://nerdbeers.venueuno.com/" }}
     post "create", params
-    assert_response 201
+    assert_response 303
 
     v = Venue.last()
     puts "id: #{v.id}"    

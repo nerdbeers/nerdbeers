@@ -20,7 +20,7 @@ class Mgmt::VenuesController< Mgmt::MgmtController
     @venue = Venue.new(venue_params)
 
     if @venue.save
-      redirect_to [:mgmt, @venue], notice: 'Venue was successfully created.', status: 201
+      redirect_to [:mgmt, @venue], notice: 'Venue was successfully created.', status: 303
     else
       render :new
     end
@@ -29,8 +29,6 @@ class Mgmt::VenuesController< Mgmt::MgmtController
   def update
     if @venue.update(venue_params)
       redirect_to [:mgmt, @venue], notice: 'Venue was successfully updated.', status: 303
-    else
-      render :edit
     end
   end
 

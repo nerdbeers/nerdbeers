@@ -20,7 +20,7 @@ class Mgmt::AgendasController < Mgmt::MgmtController
     @agenda = Agenda.new(agenda_params)
 
     if @agenda.save
-      redirect_to [:mgmt, @agenda], notice: 'Agenda was successfully created.', status: 201
+      redirect_to [:mgmt, @agenda], notice: 'Agenda was successfully created.', status: 303
     else
       render :new
     end
@@ -29,8 +29,6 @@ class Mgmt::AgendasController < Mgmt::MgmtController
   def update
     if @agenda.update(agenda_params)
       redirect_to [:mgmt, @agenda], notice: 'Agenda was successfully updated.', status: 303
-    else
-      render :edit
     end
   end
 
