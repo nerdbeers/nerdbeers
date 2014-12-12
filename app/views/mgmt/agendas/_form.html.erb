@@ -15,7 +15,7 @@
       <div class="col-md-6">
         <div class="form-group">
           <%= f.label :meeting_date %>
-          <%= f.date_field :meeting_date, :class => 'form-control' %>
+          <%= f.datetime_local_field :meeting_date, :value => @agenda.meeting_date.strftime("%a, %B %d %I:%M%p"),  :class => 'form-control' %>
         </div>
       </div>
       <div class="col-md-6">
