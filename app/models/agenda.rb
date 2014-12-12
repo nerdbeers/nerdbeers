@@ -3,6 +3,7 @@ class Agenda < ActiveRecord::Base
   store_accessor :details, :topic1, :topic2, :topic3, :beer1, :beer2, :beer3
   validates :meeting_date, presence: true
   validates :venue_id, presence: true
+  after_update :bust_cache
   
   def self.get_agenda(meetingdate)
     if meetingdate.present?
@@ -21,6 +22,13 @@ class Agenda < ActiveRecord::Base
     Rails.cache.fetch("all_agendas", :expires_in => 5.minutes) {
       Agenda.joins(:venue).select('agendas.*, venues.venue as venue_name, venues.map_link as map_link')
     }
+  end
+
+
+  private
+  def bust_cache
+    Rails.cache.delete(["agenda/",self.meeting_date])
+    Rails.cache.delete("latest_agenda")
   end
 
 end
