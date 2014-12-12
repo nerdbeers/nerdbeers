@@ -10,6 +10,7 @@ end
 class Suggestion < ActiveRecord::Base
   include ActiveModel::Validations
   validates_with SuggestionValidator
+  after_create :notify_team
  
   scope :most_recent_first, -> { order 'created_at DESC' }
 
@@ -18,5 +19,10 @@ class Suggestion < ActiveRecord::Base
     s.topic = topic
     s.beer = beer
     s.save!
+  end
+
+  private 
+  def notify_team
+    Scream.updateteam('suggestions')
   end
  end
