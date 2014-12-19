@@ -18,10 +18,11 @@ class ApplicationController < ActionController::Base
   end
 
   def log_viewport_stuff
-    unless ['ruby', 'sitewarm', 'newrelicpinger', 'googlebot'].any? { |filter| request.user_agent.to_s.downcase.include?(filter) }
+    unless ['ruby', 'sitewarm', 'newrelicpinger', 'googlebot', 'uptimerobot/2.0'].any? { |filter| request.user_agent.to_s.downcase.include?(filter) }
       Metric.log_viewport_stuff(request.variant, request.user_agent)
     end
   end
+
 
   private
   def set_variant
