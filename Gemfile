@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.0'
+ruby '2.2.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.1.0'
@@ -58,6 +58,7 @@ group :development, :test do
   #benchmarking
  # gem 'rails-perftest'
  # gem 'ruby-prof'
+ gem 'rails-erd'
 end
 gem "codeclimate-test-reporter", group: :test, require: nil
 
