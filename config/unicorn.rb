@@ -1,5 +1,6 @@
 worker_processes Integer(ENV["WEB_CONCURRENCY"] || 3)
 timeout 15
+listen ENV['PORT'], backlog: Integer(ENV['UNICORN_BACKLOG'] || 10)
 preload_app true
 
 before_fork do |server, worker|
