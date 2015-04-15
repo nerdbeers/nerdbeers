@@ -14,7 +14,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-#gem 'turbolinks'  # we might be able to kill this one off with a pure ember app
+# gem 'turbolinks'  # we might be able to kill this one off with a pure ember app
 
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -27,17 +27,20 @@ gem "gctools", :github => "FooBarWidget/gctools", :require => false
 # perf
 gem 'fast_blank'
 
-#social
+# social
 gem "slack-notifier", :require => false
 
-#date manipulation
+# date manipulation
 gem "chronic"
 
-#cache
+# cache
 gem 'dalli'
 
-#exception handler
+# exception handler
 gem 'rollbar'
+
+# async
+gem 'sucker_punch', '~> 1.0'
 
 
 group :development, :test do
@@ -53,9 +56,9 @@ group :development, :test do
   gem 'minitest-rails-capybara'
   gem 'minitest-reporters', git: 'git://github.com/kern/minitest-reporters.git'
   gem 'mocha'
-  #gem 'turn'
+  # gem 'turn'
 
-  #benchmarking
+ # benchmarking
  # gem 'rails-perftest'
  # gem 'ruby-prof'
  gem 'rails-erd'
