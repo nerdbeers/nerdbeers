@@ -8,6 +8,7 @@ require "minitest/rails"
 require "minitest/rails/capybara"
 require "minitest/reporters"
 
+require 'sucker_punch/testing/inline'
 
 module Minitest
   module Reporters
