@@ -36,17 +36,17 @@ Rails.application.routes.draw do
     resources :venues, :only =>[:index,:show]
     resources :suggestions, :only =>[] do
       collection do
-        get '/'     => :index
+        get  '/'    => :index
         get  '/all' => :all
-        get '/:id'  => :show
+        get  '/:id' => :show
         post '/new' => :create
       end
     end
     
     resources :robots, :only =>[] do
       collection do
-        get '/vacuum'        => :vacuum
-        get  '/clearmetrics' => :clearmetrics
+        post '/vacuum'       => :vacuum
+        post '/clearmetrics' => :clearmetrics
       end
     end
   end
