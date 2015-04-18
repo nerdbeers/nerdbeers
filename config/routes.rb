@@ -42,6 +42,13 @@ Rails.application.routes.draw do
         post '/new' => :create
       end
     end
+    
+    resources :robots, :only =>[] do
+      collection do
+        get '/vacuum'        => :vacuum
+        get  '/clearmetrics' => :clearmetrics
+      end
+    end
   end
 
   root 'home#index'
