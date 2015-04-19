@@ -23,6 +23,7 @@ gem 'oj'  # json render
 gem 'oj_mimic_json' # we need this for Rails 4.1.x
 # webserver
 gem 'unicorn'
+gem 'unicorn-worker-killer'
 gem "gctools", :github => "FooBarWidget/gctools", :require => false
 # perf
 gem 'fast_blank'
