@@ -1,4 +1,5 @@
 class Api::RobotsController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :authenticate
   
   def vacuum
@@ -27,6 +28,19 @@ class Api::RobotsController < ApplicationController
       render json: 'Bad credentials', status: 401
     end
 end
+=begin
+# curl -H "Authorization: Token token=nerdbeers" http://localhost:3000/api/robots/vacuum
+# curl -H "Authorization: Token token=nerdbeers" http://localhost:3000/api/robots/vacuum
 
-# curl -H "Authorization: Token token=nerdbeers" http://localhost:3000/api/robots/vacuum
-# curl -H "Authorization: Token token=nerdbeers" http://localhost:3000/api/robots/vacuum
+curl -H "Content-Type: application/json" -H "Authorization: token 804ef78pretendtoken8762" -X POST http://localhost:3000/api/robots/vacuum
+
+curl -H "Authorization: Token token=nerdbeers" -X POST http://localhost:3000/api/robots/clearmetrics
+curl -H "Authorization: Token token=nerdbeers" http://localhost:3000/api/robots/clearmetrics
+
+curl --request POST -H "Authorization: Token token=nerdbeers" http://nerdbeers.com/api/robots/clearmetrics
+curl -X POST -H "Authorization: Token token=nerdbeers" http://nerdbeers.com/api/robots/clearmetrics
+
+
+
+curl -H "Authorization: Token token=nerdbeers" http://nerdbeers.com/api/robots/vacuum
+=end
