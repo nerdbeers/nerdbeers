@@ -8,8 +8,10 @@ namespace :dbmaint do
   end
   
   task :clear_metrics => :environment do
-    Rails.application.eager_load!
-    ClearMetricsJob.new.async.perform()
+    if Time.now.to_date.strftime("%A") == 'Friday'
+      Rails.application.eager_load!
+      ClearMetricsJob.new.async.perform()
+    end
   end
   
   
