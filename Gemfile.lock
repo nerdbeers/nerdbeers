@@ -1,10 +1,4 @@
 GIT
-  remote: git://github.com/FooBarWidget/gctools.git
-  revision: 15e3372c65513ae31e47ca081a50a06c21cefb6b
-  specs:
-    gctools (0.2.3)
-
-GIT
   remote: git://github.com/kern/minitest-reporters.git
   revision: 6b624d4b75ed07753ca39a87b62a3104a0acfad9
   specs:
@@ -226,7 +220,6 @@ DEPENDENCIES
   dotenv-rails
   fast_blank
   foreman
-  gctools!
   heroku-deflater
   jbuilder (~> 2.0)
   jquery-rails
