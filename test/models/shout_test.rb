@@ -3,20 +3,20 @@ require 'test_helper'
 class ShoutTest < ActiveSupport::TestCase
   test "test assert nil SLACK_URL raise error" do
     assert_raise RuntimeError do
-       Shout.assertSlackUrlSet ""
+       Shout.assert_slack_url_set ""
     end
   end
 
   test "test assert empty string SLACK_URL raise error" do
     assert_raise RuntimeError do
-       Shout.assertSlackUrlSet nil
+       Shout.assert_slack_url_set nil
     end
   end
 
   test "test assert non-nil, non-empty SLACK_URL does not raise error" do
     begin
-      Shout.assertSlackUrlSet "any string works"
-      Shout.assertSlackUrlSet "http://localhost/"
+      Shout.assert_slack_url_set "any string works"
+      Shout.assert_slack_url_set "http://localhost/"
       assert true, "non-empty, non-nil SLACK_URL should not raise error"
     rescue => e
       flunk "non-empty, non-nil SLACK_URL should not raise error"
@@ -39,17 +39,17 @@ class ShoutTest < ActiveSupport::TestCase
   end
 
   test "test shout databot notifier" do
-    n = Shout.getNotifier "databot"
+    n = Shout.get_notifier "databot"
     testNotifer "databot", n, "#database", "databot", ":elephant:"
   end
 
   test "test shout slackbot notifier" do
-    n = Shout.getNotifier "slackbot"
+    n = Shout.get_notifier "slackbot"
     testNotifer "slackbot", n, "#general", "Godfather", nil
   end
 
   test "test shout 'default' notifier" do
-    n = Shout.getNotifier "literally anything not databot or slackbot"
+    n = Shout.get_notifier "literally anything not databot or slackbot"
     testNotifer "default", n, "#general", "Godfather", nil
   end
 

@@ -3,8 +3,8 @@ require 'net/http'
 class Scream
 
   def self.updateteam(data)
-    assertHubotUrlSet ENV["HUBOT_URL"]
-    action = getAction data
+    assert_hubot_url_set ENV["HUBOT_URL"]
+    action = get_action data
 
     begin
       url = URI.parse(ENV["HUBOT_URL"] + "#{action}")
@@ -13,23 +13,23 @@ class Scream
         http.request(req)
       }
     rescue => e
-      #logger.log "A very bad thing happened: #{e}"
+      # logger.log "A very bad thing happened: #{e}"
       puts "#{e}"
     end
 
   end
 
-  def self.getAction data
-    if data == 'suggestions' 
+  def self.get_action data
+    if data == 'suggestions'
       action = 'suggestionsupdate'
     else
       action = 'agendaupdate'
     end
   end
 
-  def self.assertHubotUrlSet url
+  def self.assert_hubot_url_set url
     if url.to_s.length == 0
-      #if HUBOT_URL is not set, we we won't get ":boom:" notifications when
+      # if HUBOT_URL is not set, we we won't get ":boom:" notifications when
       raise "Environment variable HUBOT_URL must be set!"
     end
   end
