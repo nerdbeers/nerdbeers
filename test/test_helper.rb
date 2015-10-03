@@ -77,7 +77,7 @@ class ActiveSupport::TestCase
   def login
     basic_auth ENV["MGMT_LOGIN"], ENV["MGMT_PASSWORD"]
   end
-  #http://theadmin.org/articles/test-http-basic-authentication-in-rails/
+  # http://theadmin.org/articles/test-http-basic-authentication-in-rails/
   def basic_auth(name, password)
     if page.driver.respond_to?(:basic_auth)
       page.driver.basic_auth(name, password)
