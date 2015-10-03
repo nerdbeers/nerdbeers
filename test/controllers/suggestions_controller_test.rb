@@ -24,46 +24,44 @@ class SuggestionsControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
-    #get(:index, {:viewing => :recent })
+    # get(:index, {:viewing => :recent })
     get :index
     suggestions_index_common
 
     refute_array = [suggestions_new_path, suggestions_all_path]
     suggestions_path_assert_refute suggestions_path, refute_array, @request.original_fullpath
 
-    recSugg = get_suggestions false
-    allSugg = get_suggestions true
+    rec_sugg = get_suggestions false
+    all_sugg = get_suggestions true
     list    = assigns(:suggestions)
-    assert_not recSugg.count == allSugg.count, "recent and all should not have same count"
-    assert list.count == recSugg.count, "should have same count"
+    assert_not rec_sugg.count == all_sugg.count, "recent and all should not have same count"
+    assert list.count == rec_sugg.count, "should have same count"
   end
 
   test "should get index all" do
-    #get(:index, { :all => 'all', :viewing => :all })
+    # get(:index, { :all => 'all', :viewing => :all })
     get :all
     suggestions_index_common
 
     refute_array = [suggestions_path, suggestions_new_path]
     suggestions_path_assert_refute suggestions_all_path, refute_array, @request.original_fullpath
 
-    recSugg = get_suggestions false
-    allSugg = get_suggestions true
+    rec_sugg = get_suggestions false
+    all_sugg = get_suggestions true
     list    = assigns(:suggestions)
-    #puts "recent: #{recSugg.count}"
-    #puts "all: #{allSugg.count}"
-    #puts "suggestions: #{list.count}"
-    assert_not recSugg.count == allSugg.count, "recent and all should not have same count"
-    assert assigns(:suggestions).count == allSugg.count, "should have same count"
+
+    assert_not rec_sugg.count == all_sugg.count, "recent and all should not have same count"
+    assert assigns(:suggestions).count == all_sugg.count, "should have same count"
   end
 
   test "should get new" do
     get :new
     assert_response :success
-    
+
     refute_array = [suggestions_path, suggestions_all_path]
     suggestions_path_assert_refute suggestions_new_path, refute_array, @request.original_fullpath
 
-    assert_match /desktop/i, @request.variant.to_s #we have the correct variant
+    assert_match /desktop/i, @request.variant.to_s
     assert_template "suggestions/new"
     assert_template layout: "layouts/application"
   end
@@ -71,7 +69,7 @@ class SuggestionsControllerTest < ActionController::TestCase
   def suggestions_index_common
     assert_response :success
     assert_not_nil assigns(:suggestions), "suggestions should not be nil"
-    assert_match /desktop/i, @request.variant.to_s #we have the correct variant
+    assert_match /desktop/i, @request.variant.to_s
     assert_template "suggestions/_index"
     assert_template layout: "layouts/application"
   end
@@ -82,9 +80,9 @@ class SuggestionsControllerTest < ActionController::TestCase
     end
   end
 
-  def get_suggestions allSuggestions
+  def get_suggestions all_suggestions
     s = Suggestion.most_recent_first
-    allSuggestions == true ? s : s.take(5)
+    all_suggestions == true ? s : s.take(5)
   end
 
 end
