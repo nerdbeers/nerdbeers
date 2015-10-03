@@ -110,7 +110,7 @@ class Mgmt::AgendasControllerTest < ActionController::TestCase
     assert a.beer2  == "beer dos", "Beer2 should match"
     assert a.beer3  == "beer tres", "Beer3 should match"
 
-    #ensure we don't match original values
+    # ensure we don't match original values
     assert a.topic1 != @agenda.topic1, "Topic1 should not match"
     assert a.topic2 != @agenda.topic2, "Topic2 should not match"
     assert a.topic3 != @agenda.topic2, "Topic3 should not match"

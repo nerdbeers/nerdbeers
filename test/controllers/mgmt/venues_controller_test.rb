@@ -18,7 +18,6 @@ class Mgmt::VenuesControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert_template layout: "layouts/mgmt"
-
   end
 
   test "should get venue details" do
@@ -69,7 +68,7 @@ class Mgmt::VenuesControllerTest < ActionController::TestCase
     assert_response 303
 
     v = Venue.last()
-    puts "id: #{v.id}"
+    # puts "id: #{v.id}"
     after = Venue.count()
     assert after != before, "Number of venues should increase"
     assert after == before + 1, "Number of venues should increase by 1"
