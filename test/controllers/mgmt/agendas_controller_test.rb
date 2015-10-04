@@ -31,7 +31,7 @@ class Mgmt::AgendasControllerTest < ActionController::TestCase
 
   test "should handle create an agenda fails" do
     before = Agenda.count()
-    date = DateTime.now.to_date
+    # date = DateTime.now.to_date
 
     @request.env['HTTP_AUTHORIZATION'] = 'Basic ' + Base64.encode64(@user + ':' + @password )
     params = {agenda: { topic1: "Gonna Fail"}}

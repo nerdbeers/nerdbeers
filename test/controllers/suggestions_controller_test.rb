@@ -33,9 +33,9 @@ class SuggestionsControllerTest < ActionController::TestCase
 
     rec_sugg = get_suggestions false
     all_sugg = get_suggestions true
-    list    = assigns(:suggestions)
+
     assert_not rec_sugg.count == all_sugg.count, "recent and all should not have same count"
-    assert list.count == rec_sugg.count, "should have same count"
+    assert assigns(:suggestions).count == rec_sugg.count, "should have same count"
   end
 
   test "should get index all" do
@@ -48,7 +48,6 @@ class SuggestionsControllerTest < ActionController::TestCase
 
     rec_sugg = get_suggestions false
     all_sugg = get_suggestions true
-    list    = assigns(:suggestions)
 
     assert_not rec_sugg.count == all_sugg.count, "recent and all should not have same count"
     assert assigns(:suggestions).count == all_sugg.count, "should have same count"

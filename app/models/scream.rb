@@ -9,7 +9,7 @@ class Scream
     begin
       url = URI.parse(ENV["HUBOT_URL"] + "#{action}")
       req = Net::HTTP::Get.new(url.to_s)
-      res = Net::HTTP.start(url.host, url.port) {|http|
+      Net::HTTP.start(url.host, url.port) {|http|
         http.request(req)
       }
     rescue => e
@@ -21,9 +21,9 @@ class Scream
 
   def self.get_action data
     if data == 'suggestions'
-      action = 'suggestionsupdate'
+      'suggestionsupdate'
     else
-      action = 'agendaupdate'
+      'agendaupdate'
     end
   end
 

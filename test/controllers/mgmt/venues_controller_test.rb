@@ -42,7 +42,7 @@ class Mgmt::VenuesControllerTest < ActionController::TestCase
 
   test "should create an venue successfully" do
     before = Venue.count()
-    venue_id = 1
+    # venue_id = 1
 
     @request.env['HTTP_AUTHORIZATION'] = 'Basic ' + Base64.encode64(@user + ':' + @password )
     params = {venue: { venue: "Venue Uno", map_link: "http://nerdbeers.venueuno.com/" }}

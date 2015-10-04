@@ -1,5 +1,5 @@
 class Api::SuggestionsController < ApplicationController
-  protect_from_forgery except: :create
+  skip_before_action :verify_authenticity_token
 
   def index
     @suggestions = suggestions false
@@ -38,5 +38,4 @@ class Api::SuggestionsController < ApplicationController
   def suggestion_params
     params.require(:suggestion).permit(:topic, :beer)
   end
-
 end
