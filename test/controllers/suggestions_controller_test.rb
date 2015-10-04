@@ -60,7 +60,7 @@ class SuggestionsControllerTest < ActionController::TestCase
     refute_array = [suggestions_path, suggestions_all_path]
     suggestions_path_assert_refute suggestions_new_path, refute_array, @request.original_fullpath
 
-    assert_match /desktop/i, @request.variant.to_s
+    assert_match (/desktop/i), @request.variant.to_s
     assert_template "suggestions/new"
     assert_template layout: "layouts/application"
   end
@@ -68,7 +68,7 @@ class SuggestionsControllerTest < ActionController::TestCase
   def suggestions_index_common
     assert_response :success
     assert_not_nil assigns(:suggestions), "suggestions should not be nil"
-    assert_match /desktop/i, @request.variant.to_s
+    assert_match (/desktop/i), @request.variant.to_s
     assert_template "suggestions/_index"
     assert_template layout: "layouts/application"
   end

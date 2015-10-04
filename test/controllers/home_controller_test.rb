@@ -5,7 +5,7 @@ class HomeControllerTest < ActionController::TestCase
     get :index
     assert_response :success
 
-    assert_match /desktop/i, @request.variant.to_s # we have the correct variant
+    assert_match (/desktop/i), @request.variant.to_s # we have the correct variant
     assert_template "home/index"
     assert_template layout: "layouts/application"
   end
@@ -15,7 +15,7 @@ class HomeControllerTest < ActionController::TestCase
     get :index
     assert_response :success
 
-    assert_match /mobile/i, @request.variant.to_s # we have the correct variant
+    assert_match (/mobile/i), @request.variant.to_s # we have the correct variant
     assert_template layout: "layouts/application"
   end
 
@@ -24,7 +24,7 @@ class HomeControllerTest < ActionController::TestCase
     get :index
     assert_response :success
 
-    assert_match /tablet/i, @request.variant.to_s
+    assert_match (/tablet/i), @request.variant.to_s
     assert_template layout: "layouts/application"
   end
 
@@ -32,7 +32,7 @@ class HomeControllerTest < ActionController::TestCase
     get :event
     assert_response :success
 
-    assert_match /desktop/i, @request.variant.to_s
+    assert_match (/desktop/i), @request.variant.to_s
     assert_template "home/event"
     assert_template layout: "layouts/application"
   end
@@ -42,7 +42,7 @@ class HomeControllerTest < ActionController::TestCase
     get :event
     assert_response :success
 
-    assert_match /mobile/i, @request.variant.to_s
+    assert_match (/mobile/i), @request.variant.to_s
     assert_template layout: "layouts/application"
   end
 
@@ -51,7 +51,7 @@ class HomeControllerTest < ActionController::TestCase
     get :event
     assert_response :success
 
-    assert_match /tablet/i, @request.variant.to_s
+    assert_match (/tablet/i), @request.variant.to_s
     assert_template layout: "layouts/application"
   end
 end
