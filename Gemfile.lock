@@ -153,8 +153,8 @@ GEM
     raindrops (0.15.0)
     rake (10.4.2)
     rdoc (4.2.0)
-    rollbar (2.3.0)
-      oj (~> 2.12.14)
+    rollbar (2.4.0)
+      multi_json
     ruby-graphviz (1.2.2)
     ruby-progressbar (1.7.5)
     sass (3.2.19)
