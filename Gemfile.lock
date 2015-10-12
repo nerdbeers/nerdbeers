@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/kern/minitest-reporters.git
-  revision: 2f82fd1b81ecd716c6164b541f5092a089e3a967
+  revision: aa20771d0e385acfbb223990529775cc9f1aff0b
   specs:
-    minitest-reporters (1.1.2)
+    minitest-reporters (1.1.3)
       ansi
       builder
       minitest (>= 5.0)
