@@ -6,6 +6,8 @@ gem 'rails', '~> 4.1.0'
 
 gem 'pg'
 
+gem 'mime-types', '~> 2.6.1', require: 'mime/types/columnar'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
