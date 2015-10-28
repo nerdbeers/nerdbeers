@@ -111,7 +111,7 @@ GEM
     metaclass (0.0.4)
     mime-types (2.6.2)
     mini_portile (0.6.2)
-    minitest (5.8.1)
+    minitest (5.8.2)
     minitest-capybara (0.7.2)
       capybara (~> 2.2)
       minitest (~> 5.0)
@@ -168,7 +168,7 @@ GEM
     raindrops (0.15.0)
     rake (10.4.2)
     rdoc (4.2.0)
-    rollbar (2.5.0)
+    rollbar (2.5.1)
       multi_json
     ruby-graphviz (1.2.2)
     ruby-progressbar (1.7.5)
