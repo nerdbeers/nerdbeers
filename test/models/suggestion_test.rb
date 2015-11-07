@@ -1,5 +1,4 @@
-require "test_helper"
-
+require 'test_helper'
 class SuggestionTest < ActiveSupport::TestCase
 
   def test_suggestion_not_valid_when_blank_topic_and_blank_beer
@@ -56,7 +55,7 @@ class SuggestionTest < ActiveSupport::TestCase
   def test_suggestion_create_not_valid_when_nil_topic_and_nil_beer
     assert_raise ActiveRecord::RecordInvalid do
         Suggestion.create(nil, nil)
-    end    
+    end
   end
 
 end

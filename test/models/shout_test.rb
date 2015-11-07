@@ -1,56 +1,55 @@
 require 'test_helper'
-
 class ShoutTest < ActiveSupport::TestCase
-  test "test assert nil SLACK_URL raise error" do
+  test 'test assert nil SLACK_URL raise error' do
     assert_raise RuntimeError do
-       Shout.assert_slack_url_set ""
+       Shout.assert_slack_url_set ''
     end
   end
 
-  test "test assert empty string SLACK_URL raise error" do
+  test 'test assert empty string SLACK_URL raise error' do
     assert_raise RuntimeError do
        Shout.assert_slack_url_set nil
     end
   end
 
-  test "test assert non-nil, non-empty SLACK_URL does not raise error" do
+  test 'test assert non-nil, non-empty SLACK_URL does not raise error' do
     begin
-      Shout.assert_slack_url_set "any string works"
-      Shout.assert_slack_url_set "http://localhost/"
-      assert true, "non-empty, non-nil SLACK_URL should not raise error"
+      Shout.assert_slack_url_set 'any string works'
+      Shout.assert_slack_url_set 'http://localhost/'
+      assert true, 'non-empty, non-nil SLACK_URL should not raise error'
     rescue => e
-      flunk "non-empty, non-nil SLACK_URL should not raise error"
+      flunk 'non-empty, non-nil SLACK_URL should not raise error'
     end
   end
 
-  test "test shout updateteam (databot)" do
-    Shout.updateteam("test updateteam (databot)", "databot")
+  test 'test shout updateteam (databot)' do
+    Shout.updateteam('test updateteam (databot)', 'databot')
     skip ('need a better way to test updateteam (databot)...')
   end
 
-  test "test shout updateteam (slackbot)" do
-    Shout.updateteam("test updateteam (slackbot)", "slackbot")
+  test 'test shout updateteam (slackbot)' do
+    Shout.updateteam('test updateteam (slackbot)', 'slackbot')
     skip ('need a better way to test updateteam (slackbot)...')
   end
 
-  test "test shout updateteam (default)" do
-    Shout.updateteam("test updateteam (default)", "literally anything not databot or slackbot")
+  test 'test shout updateteam (default)' do
+    Shout.updateteam('test updateteam (default)', 'literally anything not databot or slackbot')
     skip ('need a better way to test updateteam (default)...')
   end
 
-  test "test shout databot notifier" do
-    n = Shout.get_notifier "databot"
-    testNotifer "databot", n, "#database", "databot", ":elephant:"
+  test 'test shout databot notifier' do
+    n = Shout.get_notifier 'databot'
+    testNotifer 'databot', n, '#database', 'databot', ':elephant:'
   end
 
-  test "test shout slackbot notifier" do
-    n = Shout.get_notifier "slackbot"
-    testNotifer "slackbot", n, "#general", "Godfather", nil
+  test 'test shout slackbot notifier' do
+    n = Shout.get_notifier 'slackbot'
+    testNotifer 'slackbot', n, '#general', 'Godfather', nil
   end
 
-  test "test shout 'default' notifier" do
-    n = Shout.get_notifier "literally anything not databot or slackbot"
-    testNotifer "default", n, "#general", "Godfather", nil
+  test 'test shout default notifier' do
+    n = Shout.get_notifier 'literally anything not databot or slackbot'
+    testNotifer 'default', n, '#general', 'Godfather', nil
   end
 
   def testNotifer txt, notifier, channel, username, icon_emoji
