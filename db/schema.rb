@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 20140613211048) do
   enable_extension "plpgsql"
   enable_extension "hstore"
   enable_extension "pg_stat_statements"
-  enable_extension "adminpack"
 
   create_table "agendas", force: true do |t|
     t.date     "meeting_date"

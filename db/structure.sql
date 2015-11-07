@@ -24,20 +24,6 @@ COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 
 
 --
--- Name: adminpack; Type: EXTENSION; Schema: -; Owner: -
---
-
-CREATE EXTENSION IF NOT EXISTS adminpack WITH SCHEMA pg_catalog;
-
-
---
--- Name: EXTENSION adminpack; Type: COMMENT; Schema: -; Owner: -
---
-
-COMMENT ON EXTENSION adminpack IS 'administrative functions for PostgreSQL';
-
-
---
 -- Name: hstore; Type: EXTENSION; Schema: -; Owner: -
 --
 
@@ -209,6 +195,30 @@ ALTER SEQUENCE suggestions_id_seq OWNED BY suggestions.id;
 
 
 --
+-- Name: user_agent_hits; Type: VIEW; Schema: public; Owner: -
+--
+
+CREATE VIEW user_agent_hits AS
+ SELECT metrics.user_agent,
+    count(0) AS hits
+   FROM metrics
+  GROUP BY metrics.user_agent;
+
+
+--
+-- Name: user_agent_hits_by_month; Type: VIEW; Schema: public; Owner: -
+--
+
+CREATE VIEW user_agent_hits_by_month AS
+ SELECT (date_part('month'::text, metrics.created_at))::integer AS month,
+    metrics.variant AS type,
+    count(0) AS hits
+   FROM metrics
+  WHERE ((metrics.user_agent !~~ '%bot%'::text) AND (metrics.user_agent !~~* '%crawl%'::text))
+  GROUP BY date_part('month'::text, metrics.created_at), metrics.variant;
+
+
+--
 -- Name: venues; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -355,4 +365,6 @@ INSERT INTO schema_migrations (version) VALUES ('20140715011430');
 INSERT INTO schema_migrations (version) VALUES ('20140726203240');
 
 INSERT INTO schema_migrations (version) VALUES ('20140809040807');
+
+INSERT INTO schema_migrations (version) VALUES ('20151107052554');
 
