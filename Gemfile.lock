@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/kern/minitest-reporters.git
-  revision: 82d686850d0599bce37e538b52b3c98f20f5b1c4
+  revision: 946094c56bed8cf7c44ebf545dbc9e57de30e98b
   specs:
-    minitest-reporters (1.1.5)
+    minitest-reporters (1.1.7)
       ansi
       builder
       minitest (>= 5.0)
@@ -168,7 +168,7 @@ GEM
     raindrops (0.15.0)
     rake (10.4.2)
     rdoc (4.2.0)
-    rollbar (2.6.1)
+    rollbar (2.6.3)
       multi_json
     ruby-graphviz (1.2.2)
     ruby-progressbar (1.7.5)
