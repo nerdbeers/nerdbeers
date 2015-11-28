@@ -6,3 +6,8 @@ require File.expand_path('../config/application', __FILE__)
 Rails.application.load_tasks
 
 task :test => ['test:all:db']
+
+# desc "Setup the Rails linux ICQs"
+# task :install do |t, args|
+#  system "echo \"please see readme\" > icqchannel.md"
+# end
