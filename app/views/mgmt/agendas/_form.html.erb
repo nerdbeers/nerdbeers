@@ -15,7 +15,7 @@
       <div class="col-md-6">
         <div class="form-group">
           <%= f.label :meeting_date %>
-          <%= f.datetime_local_field :meeting_date, :value => @agenda.meeting_date.strftime("%a, %B %d %I:%M%p"),  :class => 'form-control' %>
+          <%= f.datetime_local_field :meeting_date, class: 'form-control' %>
         </div>
       </div>
       <div class="col-md-6">
@@ -30,13 +30,13 @@
       <div class="col-md-6">
         <div class="form-group">
           <%= f.label :topic1 %>
-          <%= f.text_field :topic1, :class => 'form-control' %>
+          <%= f.text_field :topic1, class: 'form-control' %>
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
           <%= f.label :beer1 %>
-          <%= f.text_field :beer1, :class => 'form-control' %>
+          <%= f.text_field :beer1, class: 'form-control' %>
         </div>
       </div>
     </div>
@@ -45,13 +45,13 @@
       <div class="col-md-6">
         <div class="form-group">
           <%= f.label :topic2 %>
-          <%= f.text_field :topic2, :class => 'form-control' %>
+          <%= f.text_field :topic2, class: 'form-control' %>
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
           <%= f.label :beer2 %>
-          <%= f.text_field :beer2, :class => 'form-control' %>
+          <%= f.text_field :beer2, class: 'form-control' %>
         </div>
       </div>
     </div>
@@ -60,19 +60,19 @@
       <div class="col-md-6">
         <div class="form-group">
           <%= f.label :topic3 %>
-          <%= f.text_field :topic3, :class => 'form-control' %>
+          <%= f.text_field :topic3, class: 'form-control' %>
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
           <%= f.label :beer3 %>
-          <%= f.text_field :beer3, :class => 'form-control' %>
+          <%= f.text_field :beer3, class: 'form-control' %>
         </div>
       </div>
     </div>
     <div class="row">
         <div class="col-md-12">
-          <%= f.submit :class => 'btn btn-primary pull-right' %>
+          <%= f.submit class: 'btn btn-primary pull-right' %>
           <div class="clearfix"></div>
         </div>
     </div>
