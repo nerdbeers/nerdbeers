@@ -29,10 +29,10 @@ gem 'unicorn-worker-killer'
 gem 'fast_blank'
 
 # social
-gem "slack-notifier", :require => false
+gem 'slack-notifier', :require => false
 
 # date manipulation
-gem "chronic"
+gem 'chronic'
 
 # cache
 gem 'dalli'
@@ -65,7 +65,7 @@ group :development, :test do
  # gem 'ruby-prof'
  gem 'rails-erd'
 end
-gem "codeclimate-test-reporter", group: :test, require: nil
+gem 'codeclimate-test-reporter', group: :test, require: nil
 
 group :production do
   gem 'rails_12factor'
