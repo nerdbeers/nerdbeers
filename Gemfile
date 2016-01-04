@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.3'
+ruby '2.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.1.0'
@@ -48,7 +48,6 @@ gem 'snitcher'
 
 group :development, :test do
   gem 'quiet_assets'
-  gem 'spring'# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 
   gem 'thin'
   gem 'bullet' #orm profiling
