@@ -39,7 +39,7 @@ class ShoutTest < ActiveSupport::TestCase
 
   test 'test shout databot notifier' do
     n = Shout.get_notifier 'databot'
-    testNotifer 'databot', n, '#database', 'databot', ':elephant:'
+    testNotifer 'databot', n, '#general', 'databot', ':elephant:'
   end
 
   test 'test shout slackbot notifier' do
