@@ -41,7 +41,7 @@ gem 'dalli'
 gem 'rollbar'
 
 # async
-gem 'sucker_punch', '~> 1.0'
+gem 'sucker_punch' # , '~> 1.0'
 
 # job notification
 gem 'snitcher'
