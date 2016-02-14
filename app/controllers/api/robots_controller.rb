@@ -1,17 +1,17 @@
 class Api::RobotsController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :authenticate
-  
+
   def vacuum
-    VacuumDbJob.new.async.perform()
+    VacuumDbJob.perform_async()
     head 204
   end
 
   def clearmetrics
-    ClearMetricsJob.new.async.perform()
+    ClearMetricsJob.perform_async()
     head 204
   end
-  
+
   protected
     def authenticate
       authenticate_token || render_unauthorized
