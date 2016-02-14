@@ -3,24 +3,24 @@ namespace :dbmaint do
   task :vacuum => :environment do
     if Time.now.to_date.strftime("%A") == 'Thursday'
       Rails.application.eager_load!
-      VacuumDbJob.new.async.perform()
+      VacuumDbJob.perform_async()
     end
   end
-  
+
   task :clear_metrics => :environment do
     if Time.now.to_date.strftime("%A") == 'Friday'
       Rails.application.eager_load!
-      ClearMetricsJob.new.async.perform()
+      ClearMetricsJob.perform_async()
     end
   end
-  
-  
+
+
   #https://gist.github.com/abstractcoder/5886291
   desc "Backs up heroku database and restores it locally"
     task restore_from_heroku: :environment do
       # Load the current environments database config
       c = Rails.configuration.database_configuration[Rails.env]
-  
+
       Bundler.with_clean_env do
         # Capture new backup, delete oldest manual backup if limit reached
         `heroku pgbackups:capture --expire`
