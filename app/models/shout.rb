@@ -32,7 +32,7 @@ class Shout
   private
   def self.datateam
     Slack::Notifier.new ENV["SLACK_URL"],
-                        channel: '#database', username: 'databot', icon_emoji: ":elephant:"
+                        channel: '#general', username: 'databot', icon_emoji: ":elephant:"
   end
 
   private
