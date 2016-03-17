@@ -46,6 +46,8 @@ gem 'sucker_punch' # , '~> 1.0'
 # job notification
 gem 'snitcher'
 
+# gem 'tunemygc'
+
 group :development, :test do
   gem 'quiet_assets'
 
