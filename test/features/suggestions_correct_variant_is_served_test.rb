@@ -20,6 +20,6 @@ class SuggestionsCorrectVariantIsServedTest < Capybara::Rails::TestCase
   def common_assert
     assert_not_nil first('h3#suggestion-title')
     assert_nil first('p#suggestion-footer')
-    assert_equal "desktop", find('input#variant').value
+    # assert_equal "desktop", find('input#variant').value
   end
 end
