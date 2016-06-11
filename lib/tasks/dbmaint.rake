@@ -3,14 +3,14 @@ namespace :dbmaint do
   task :vacuum => :environment do
     if Time.now.to_date.strftime("%A") == 'Thursday'
       Rails.application.eager_load!
-      VacuumDbJob.perform_async()
+      VacuumDbJob.new.perform()
     end
   end
 
   task :clear_metrics => :environment do
     if Time.now.to_date.strftime("%A") == 'Friday'
       Rails.application.eager_load!
-      ClearMetricsJob.perform_async()
+      ClearMetricsJob.new.perform()
     end
   end
 
