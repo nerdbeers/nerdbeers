@@ -54,8 +54,6 @@ GEM
       xpath (~> 2.0)
     choice (0.2.0)
     chronic (0.10.2)
-    codeclimate-test-reporter (1.0.3)
-      simplecov
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -66,7 +64,6 @@ GEM
     concurrent-ruby (1.0.2)
     daemons (1.2.4)
     dalli (2.7.6)
-    docile (1.1.5)
     dotenv (2.1.1)
     dotenv-rails (2.1.1)
       dotenv (= 2.1.1)
@@ -168,11 +165,6 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    simplecov (0.12.0)
-      docile (~> 1.1.0)
-      json (>= 1.8, < 3)
-      simplecov-html (~> 0.10.0)
-    simplecov-html (0.10.0)
     slack-notifier (1.5.1)
     snitcher (0.4.0)
     sprockets (2.12.4)
@@ -213,7 +205,6 @@ PLATFORMS
 DEPENDENCIES
   bullet
   chronic
-  codeclimate-test-reporter
   coffee-rails (~> 4.0.0)
   dalli
   dotenv-rails
