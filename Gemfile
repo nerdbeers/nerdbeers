@@ -58,7 +58,7 @@ group :development, :test do
   gem 'foreman' # for the procfile
   gem 'minitest-rails'#, '~> 2.0.0.beta1'
   gem 'minitest-rails-capybara'
-  gem 'minitest-reporters', git: 'git://github.com/kern/minitest-reporters.git'
+  gem 'minitest-reporters', git: 'ssh://git@github.com/kern/minitest-reporters.git'
   gem 'mocha'
   # gem 'turn'
 
