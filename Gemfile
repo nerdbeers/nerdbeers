@@ -2,26 +2,26 @@ source 'https://rubygems.org'
 ruby '2.4.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.2.0'
+gem 'rails', '~> 5.0.2'
 gem 'responders', '~> 2.0' # brought over becuase the upgrade to rails 4.2 broke this in controllers
 
 gem 'pg'
 
-gem 'mime-types', '~> 2.6.1', require: 'mime/types/columnar'
+gem 'mime-types'#, '~> 2.6.1', require: 'mime/types/columnar'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails'#, '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'#, '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails'#, '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 # gem 'turbolinks'  # we might be able to kill this one off with a pure ember app
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'json', '~> 2.0.2'   # 2.4 hack
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder'#, '~> 2.0'
 gem 'oj'  # json render
 gem 'oj_mimic_json' # we need this for Rails 4.1.x
 # webserver
@@ -51,7 +51,7 @@ gem 'snitcher'
 # gem 'tunemygc'
 
 group :development, :test do
-  gem 'quiet_assets'
+  # gem 'quiet_assets'
 
   gem 'thin'
   gem 'bullet' #orm profiling
@@ -61,6 +61,7 @@ group :development, :test do
   gem 'minitest-rails'#, '~> 2.0.0.beta1'
   gem 'minitest-rails-capybara'
   gem 'minitest-reporters', git: 'ssh://git@github.com/kern/minitest-reporters.git'
+  gem 'rails-controller-testing'
   gem 'mocha'
   # gem 'turn'
 
