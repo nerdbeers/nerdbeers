@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.3'
+ruby '2.4.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.1.0'
@@ -19,6 +19,7 @@ gem 'jquery-ui-rails'
 # gem 'turbolinks'  # we might be able to kill this one off with a pure ember app
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+# gem 'json', '~> 2.0.2'   # 2.4 hack
 gem 'jbuilder', '~> 2.0'
 gem 'oj'  # json render
 gem 'oj_mimic_json' # we need this for Rails 4.1.x
@@ -75,4 +76,4 @@ group :production do
 end
 
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
+# gem 'sdoc', '~> 0.4.0',          group: :doc

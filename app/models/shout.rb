@@ -31,14 +31,19 @@ class Shout
 
   private
   def self.datateam
-    Slack::Notifier.new ENV["SLACK_URL"],
-                        channel: '#general', username: 'databot', icon_emoji: ":elephant:"
+    Slack::Notifier.new ENV["SLACK_URL"] do
+                    defaults channel: '#general',
+                    username: 'databot',
+                    icon_emoji: ":elephant:"
+                  end
   end
 
   private
   def self.regularteam
-    Slack::Notifier.new ENV["SLACK_URL"],
-                        channel: '#general', username: 'Godfather'
+    Slack::Notifier.new ENV["SLACK_URL"] do
+                    defaults channel: '#general', 
+                    username: 'Godfather'
+        end
   end
   # emoji http://www.emoji-cheat-sheet.com/
 end
