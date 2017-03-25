@@ -11,6 +11,5 @@ class VacuumDbJob
     end
     # end
     # post to slack when it completes
-    # Shout.updateteam('vacuum has been completed', 'databot')
   end
 end
