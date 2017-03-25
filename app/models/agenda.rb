@@ -13,11 +13,11 @@ class Agenda < ActiveRecord::Base
   
   def self.get_agenda(meetingdate)
     if meetingdate.present?
-      Rails.cache.fetch(["agenda",meetingdate], :expires_in => 5.minutes) {
-        Agenda.joins(:venue).select('agendas.*, venues.venue as venue_name, venues.map_link as map_link').find_by(:meeting_date => meetingdate)  
+      Rails.cache.fetch(["agenda",meetingdate], expires_in: 5.minutes) {
+        Agenda.joins(:venue).select('agendas.*, venues.venue as venue_name, venues.map_link as map_link').find_by(meeting_date: meetingdate)  
         }
     else
-      Rails.cache.fetch("latest_agenda", :expires_in => 5.minutes) {
+      Rails.cache.fetch("latest_agenda", expires_in: 5.minutes) {
         Agenda.joins(:venue).select('agendas.*, venues.venue as venue_name, venues.map_link as map_link').last
       }
     end
@@ -25,7 +25,7 @@ class Agenda < ActiveRecord::Base
   end
 
   def self.get_all
-    Rails.cache.fetch("all_agendas", :expires_in => 5.minutes) {
+    Rails.cache.fetch("all_agendas", expires_in: 5.minutes) {
       Agenda.joins(:venue).select('agendas.*, venues.venue as venue_name, venues.map_link as map_link')
     }
   end
