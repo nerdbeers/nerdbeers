@@ -6,7 +6,7 @@ class VenueValidator < ActiveModel::Validator
   end
 end
 
-class Venue < ActiveRecord::Base
+class Venue < ApplicationRecord
   include ActiveModel::Validations
   validates_with VenueValidator
   has_many :agendas

@@ -7,7 +7,7 @@ class SuggestionValidator < ActiveModel::Validator
   end
 end
 
-class Suggestion < ActiveRecord::Base
+class Suggestion < ApplicationRecord
   include ActiveModel::Validations
   validates_with SuggestionValidator
   after_create :notify_team

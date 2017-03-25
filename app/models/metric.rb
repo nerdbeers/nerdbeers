@@ -1,4 +1,4 @@
-class Metric < ActiveRecord::Base
+class Metric < ApplicationRecord
 
   def self.log_viewport_stuff(variant, user_agent)
     Metric.create(variant: variant.to_s, user_agent: user_agent)
