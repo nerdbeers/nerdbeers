@@ -16,6 +16,9 @@ private
     # memoize this connection
     @client ||= PrintfulAPI.api_key = ENV['PRINTFUL_API_KEY']
   end
-  private_class_method :printful_config_config
+  private_class_method :printful_config
 
 end
+
+
+# https://github.com/Groundswell/printful-ruby
