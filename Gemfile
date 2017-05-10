@@ -48,6 +48,9 @@ gem 'sucker_punch' # , '~> 1.0'
 # job notification
 gem 'snitcher'
 
+# store related gems
+gem 'printful_api', require: false
+
 # gem 'tunemygc'
 
 group :development, :test do

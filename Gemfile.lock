@@ -136,6 +136,7 @@ GEM
     oj (3.0.6)
     oj_mimic_json (1.0.1)
     pg (0.20.0)
+    printful_api (1.0.1)
     public_suffix (2.0.5)
     rack (2.0.2)
     rack-test (0.6.3)
@@ -252,6 +253,7 @@ DEPENDENCIES
   oj
   oj_mimic_json
   pg
+  printful_api
   rails (~> 5.0.2)
   rails-controller-testing
   rails-erd
