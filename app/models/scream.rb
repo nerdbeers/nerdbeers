@@ -8,12 +8,12 @@ class Scream
 
     begin
       hubot_url = ENV["HUBOT_URL"] + "#{action}"
-      url = URI.parse(hubot_url)
-      req = Net::HTTP::Get.new(url.to_s)
-      Net::HTTP.start(url.host, url.port) { |http|
-        http.use_ssl = hubot_url.start_with?('https')
-        http.request(req)
-      }
+      uri = URI.parse(hubot_url)
+      http = Net::HTTP.new(uri.host, uri.port)
+      http.use_ssl = hubot_url.start_with?('https')
+
+      request = Net::HTTP::Get.new(uri)
+      response = http.request(request)
     rescue => e
       puts "A very bad thing happened: #{e}"
     end
