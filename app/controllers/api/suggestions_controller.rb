@@ -22,7 +22,6 @@ class Api::SuggestionsController < ApplicationController
   end
 
   def create
-    puts 'API CREATE!'
     @suggestion = Suggestion.new(suggestion_params)
     if @suggestion.save
       @rawr = {:message => "Suggestion saved. :)"}

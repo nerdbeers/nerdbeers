@@ -1,5 +1,5 @@
 GIT
-  remote: ssh://git@github.com/kern/minitest-reporters.git
+  remote: https://github.com/kern/minitest-reporters.git
   revision: ddc403036c6459a18fcbb9e9ddac727dc134a94a
   specs:
     minitest-reporters (1.1.14)
@@ -273,4 +273,4 @@ RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   1.14.6
+   1.15.0

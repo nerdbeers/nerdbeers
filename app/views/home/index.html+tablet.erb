@@ -1,3 +1,7 @@
+<% if @agenda.nil? %>
+	<h1>OMG! There is no agenda! Contact NerdBeers HQ immediately</h1>
+<% else %>
+
 <h2><%= @agenda.meeting_date.strftime("%B %Y") %> details</h2><br/>
 
 <table class="table">
@@ -11,4 +15,6 @@
 	<b>When:</b> <%= @agenda.meeting_date.strftime("%a, %B %d %I:%M%p") %><br/>
 	<b>Where:</b> <a href='<%= @agenda.map_link %>' ><%= @agenda.venue_name %></a>
 </p>
+
+<% end %>
 <input id="variant" type="hidden" value="tablet"/>
