@@ -1,13 +1,3 @@
-GIT
-  remote: https://github.com/kern/minitest-reporters.git
-  revision: ddc403036c6459a18fcbb9e9ddac727dc134a94a
-  specs:
-    minitest-reporters (1.1.14)
-      ansi
-      builder
-      minitest (>= 5.0)
-      ruby-progressbar
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -50,7 +40,6 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
-    ansi (1.5.0)
     arel (7.1.4)
     builder (3.2.3)
     bullet (5.5.1)
@@ -186,7 +175,6 @@ GEM
     rollbar (2.14.1)
       multi_json
     ruby-graphviz (1.2.3)
-    ruby-progressbar (1.8.1)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -247,7 +235,6 @@ DEPENDENCIES
   mime-types
   minitest-rails
   minitest-rails-capybara
-  minitest-reporters!
   mocha
   newrelic_rpm
   oj
