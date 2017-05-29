@@ -31,7 +31,7 @@ gem 'unicorn-worker-killer'
 gem 'fast_blank'
 
 # social
-gem 'slack-notifier', :require => false
+gem 'slack-notifier', '~> 2.1.0', require: false
 
 # date manipulation
 gem 'chronic'
