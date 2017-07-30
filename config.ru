@@ -1,5 +1,3 @@
-use Rack::Attack
-
 # --- Start of unicorn worker killer code ---
 if ENV['RAILS_ENV'] == 'production' 
   require 'unicorn/worker_killer'
@@ -22,3 +20,5 @@ end
 require ::File.expand_path('../config/environment',  __FILE__)
 
 run Rails.application
+
+# use Rack::Attack
