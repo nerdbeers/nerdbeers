@@ -53,6 +53,9 @@ gem 'printful_api', require: false
 
 # gem 'tunemygc'
 
+# security
+gem 'rack-attack'
+
 group :development, :test do
   # gem 'quiet_assets'
 
