@@ -13,9 +13,7 @@ class Agenda < ApplicationRecord
   
   def self.get_agenda(meetingdate)
     if meetingdate.present?
-      Rails.cache.fetch(["agenda", self.id], expires_in: 5.minutes) {
-        Agenda.joins(:venue).select('agendas.*, venues.venue as venue_name, venues.map_link as map_link').find_by(meeting_date: meetingdate)  
-        }
+      Agenda.joins(:venue).select('agendas.*, venues.venue as venue_name, venues.map_link as map_link').find_by(meeting_date: meetingdate)  
     else
       Rails.cache.fetch("latest_agenda", expires_in: 5.minutes) {
         Agenda.joins(:venue).select('agendas.*, venues.venue as venue_name, venues.map_link as map_link').last
@@ -33,7 +31,6 @@ class Agenda < ApplicationRecord
 
   private
   def bust_cache
-    Rails.cache.delete(["agenda", self.id])
     Rails.cache.delete("latest_agenda")
   end
   private 
