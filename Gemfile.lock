@@ -81,7 +81,7 @@ GEM
       activesupport (>= 4.2.0)
     heroku-deflater (0.6.3)
       rack (>= 1.4.5)
-    i18n (0.9.0)
+    i18n (0.9.1)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -96,8 +96,8 @@ GEM
     loofah (2.1.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    mail (2.6.6)
-      mime-types (>= 1.16, < 4)
+    mail (2.7.0)
+      mini_mime (>= 0.1.1)
     metaclass (0.0.4)
     method_source (0.9.0)
     mime-types (3.1)
@@ -127,7 +127,7 @@ GEM
     nio4r (2.1.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
-    oj (3.3.8)
+    oj (3.3.9)
     oj_mimic_json (1.0.1)
     pg (0.21.0)
     printful_api (1.0.1)
@@ -182,7 +182,7 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
-    rollbar (2.15.4)
+    rollbar (2.15.5)
       multi_json
     ruby-graphviz (1.2.3)
     sass (3.5.3)
@@ -275,4 +275,4 @@ RUBY VERSION
    ruby 2.4.2p198
 
 BUNDLED WITH
-   1.15.4
+   1.16.0
