@@ -3,7 +3,7 @@ class Agenda < ApplicationRecord
   store_accessor :details, :topic1, :topic2, :topic3, :beer1, :beer2, :beer3
   validates :meeting_date, presence: true
   validates :venue_id, presence: true
-  after_update :bust_cache, :notify_team
+  after_commit :bust_cache, :notify_team
   after_initialize :set_defaults
 
   def set_defaults
