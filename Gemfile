@@ -43,6 +43,7 @@ gem 'dalli'
 gem 'rollbar'
 
 # async
+gem 'faktory_worker_ruby'
 gem 'sucker_punch' # , '~> 1.0'
 
 # job notification
