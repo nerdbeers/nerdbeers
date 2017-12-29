@@ -10,7 +10,7 @@ end
 class Suggestion < ApplicationRecord
   include ActiveModel::Validations
   validates_with SuggestionValidator
-  after_create :notify_team
+  after_commit :notify_team
  
   scope :most_recent_first, -> { order 'created_at DESC' }
 
