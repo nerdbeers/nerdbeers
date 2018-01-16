@@ -5,7 +5,7 @@ ruby '2.5.0'
 gem 'rails', '~> 5.0.2'
 gem 'responders', '~> 2.0' # brought over becuase the upgrade to rails 4.2 broke this in controllers
 
-gem 'pg'
+gem 'pg', '~> 0.21.0'
 
 gem 'mime-types'#, '~> 2.6.1', require: 'mime/types/columnar'
 
