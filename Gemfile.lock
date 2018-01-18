@@ -42,7 +42,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (7.1.4)
     builder (3.2.3)
-    bullet (5.7.1)
+    bullet (5.7.2)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11.0)
     capybara (2.17.0)
