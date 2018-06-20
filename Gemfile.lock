@@ -62,7 +62,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
-    connection_pool (2.2.1)
+    connection_pool (2.2.2)
     crass (1.0.4)
     daemons (1.2.6)
     dalli (2.7.8)
@@ -71,15 +71,15 @@ GEM
       dotenv (= 2.4.0)
       railties (>= 3.2, < 6.0)
     erubis (2.7.0)
-    eventmachine (1.2.6)
+    eventmachine (1.2.7)
     execjs (2.7.0)
     faktory_worker_ruby (0.7.1)
       connection_pool (~> 2.2, >= 2.2.1)
     fast_blank (1.0.0)
-    ffi (1.9.23)
-    foreman (0.84.0)
+    ffi (1.9.25)
+    foreman (0.85.0)
       thor (~> 0.19.1)
-    get_process_mem (0.2.1)
+    get_process_mem (0.2.2)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     heroku-deflater (0.6.3)
@@ -126,17 +126,17 @@ GEM
     mocha (1.5.0)
       metaclass (~> 0.0.1)
     multi_json (1.13.1)
-    newrelic_rpm (5.1.0.344)
+    newrelic_rpm (5.2.0.345)
     nio4r (2.3.1)
-    nokogiri (1.8.2)
+    nokogiri (1.8.3)
       mini_portile2 (~> 2.3.0)
-    oj (3.6.0)
+    oj (3.6.2)
     oj_mimic_json (1.0.1)
     pg (1.0.0)
     printful_api (1.0.1)
     public_suffix (3.0.2)
     rack (2.0.5)
-    rack-attack (5.2.0)
+    rack-attack (5.3.0)
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -185,7 +185,7 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
-    rollbar (2.15.6)
+    rollbar (2.16.2)
       multi_json
     ruby-graphviz (1.2.3)
     sass (3.5.6)
@@ -201,7 +201,7 @@ GEM
       tilt (>= 1.1, < 3)
     slack-notifier (2.1.0)
     snitcher (0.4.0)
-    sprockets (3.7.1)
+    sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-rails (3.2.1)
@@ -219,7 +219,7 @@ GEM
     tilt (2.0.8)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    uglifier (4.1.10)
+    uglifier (4.1.11)
       execjs (>= 0.3.0, < 3)
     unicorn (5.4.0)
       kgio (~> 2.6)
@@ -231,7 +231,7 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
-    xpath (3.0.0)
+    xpath (3.1.0)
       nokogiri (~> 1.8)
 
 PLATFORMS
@@ -279,4 +279,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.1
+   1.16.2
