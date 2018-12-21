@@ -36,9 +36,6 @@ gem 'slack-notifier', '~> 2.1.0', require: false
 # date manipulation
 gem 'chronic'
 
-# cache
-gem 'dalli'
-
 # exception handler
 gem 'rollbar'
 
