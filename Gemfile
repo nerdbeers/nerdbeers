@@ -5,7 +5,7 @@ ruby File.read(File.expand_path('../.ruby-version', __FILE__)).chomp
 gem 'rails', '~> 5.0.2'
 gem 'responders', '~> 2.0' # brought over becuase the upgrade to rails 4.2 broke this in controllers
 
-gem 'pg'#, '~> 0.21.0'
+gem 'pg'
 
 gem 'mime-types'#, '~> 2.6.1', require: 'mime/types/columnar'
 
@@ -21,12 +21,14 @@ gem 'jquery-ui-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'json', '~> 2.0.2'   # 2.4 hack
-gem 'jbuilder'#, '~> 2.0'
-gem 'oj'  # json render
+gem 'jbuilder'      #, '~> 2.0'
+gem 'oj'            # json render
 gem 'oj_mimic_json' # we need this for Rails 4.1.x
+
 # webserver
 gem 'unicorn'
 gem 'unicorn-worker-killer'
+
 # perf
 gem 'fast_blank'
 
@@ -63,7 +65,8 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'foreman' # for the procfile
   gem 'minitest-rails'#, '~> 2.0.0.beta1'
-  gem 'minitest-rails-capybara'
+  gem 'minitest-rails-capybara', '~> 3.0.1'
+  # gem 'capybara', '~> 2.18.0'
   gem 'rails-controller-testing'
   gem 'mocha'
   # gem 'turn'
