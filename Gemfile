@@ -17,6 +17,7 @@ gem 'uglifier'#, '>= 1.3.0'
 gem 'coffee-rails'#, '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'sprockets-rails', '2.3.3'
 # gem 'turbolinks'  # we might be able to kill this one off with a pure ember app
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
