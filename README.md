@@ -1,4 +1,3 @@
-[![Code Climate](https://codeclimate.com/github/nerdbeers/nerdbeers/badges/gpa.svg)](https://codeclimate.com/github/nerdbeers/nerdbeers) [![Test Coverage](https://codeclimate.com/github/nerdbeers/nerdbeers/badges/coverage.svg)](https://codeclimate.com/github/nerdbeers/nerdbeers) 
 =========
 
 rails version of nerdbeers
